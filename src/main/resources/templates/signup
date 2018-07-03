@@ -2,7 +2,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <style>
-
+body {
+background-color: #00FFA8;
+}
 </style>
 <head>
     <title>Sample</title>

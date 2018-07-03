@@ -21,12 +21,12 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping(value = "/stu/getAllStudent",method = RequestMethod.GET)
+    @RequestMapping(value = "/signup",method = RequestMethod.GET)
     public String getAllStudent(HttpServletRequest request){
         List<Student> list = studentService.getAllStudent();
         request.setAttribute("students",list);
         // aaaaaa
-        return "student";
+        return "signup";
     }
 
 
