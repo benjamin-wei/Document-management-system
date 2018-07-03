@@ -5,7 +5,8 @@
     <title>Sample</title>
 </head>
 <body>
-    <h1 th:inline="text">Sample</h1>
+    <h1 th:inline="text">能力规范文稿管理系统</h1>
+    <h2> 入会申请<h2>
     <table>
         <!-- 名称 -->
         <thead>
