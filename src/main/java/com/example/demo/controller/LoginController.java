@@ -12,7 +12,6 @@ import java.util.List;
 
 /**
  * @description
- * @author Tim Lin
  * @create 2018-07-01
  **/
 @Controller
@@ -21,12 +20,9 @@ public class LoginController {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping(value = "/Login/getAllStudent",method = RequestMethod.GET)
-    public String getAllStudent(HttpServletRequest request){
-        List<Student> list = studentService.getAllStudent();
-        request.setAttribute("students",list);
-        // aaaaaa
-        return "student";
+    @RequestMapping(value = "/Login",method = RequestMethod.GET)
+    public String login(HttpServletRequest request){
+        return "Login";
     }
 
 

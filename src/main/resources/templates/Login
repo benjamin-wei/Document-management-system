@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<style>
+    p {font-size: 16px;}
+</style>
+<head>
+    <title>Sample</title>
+</head>
+<body>
+<h1>请登录</h1>
+<form action = "#">
+用户名 <input type = "text" placeholder = "必填" required> <br/>
+密码 <input type = "text" placeholder = "必填" required> <br/>
+<button type = "submit"> 登陆 </button>
+</form>
+<p>还没有账号？<a href = "http://localhost:8080/stu/getAllStudent" >点此</a>注册</p> <br/>
+<h2>规范列表<h2> <br/>
+<p style = "color: blue">关于草案评审的工作规范………………………………………………2017/06/01</p>
+<p>管理系统申请自个规范……………………………………………………2017/05/30</p>
+</body>
+</html>
