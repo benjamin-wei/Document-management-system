@@ -7,6 +7,17 @@
 <body>
     <h1 th:inline="text">能力规范文稿管理系统</h1>
     <h2> 入会申请<h2>
+<form action="action_page.php">
+姓名:<br>
+<input type="text" name="firstname" value="Mickey">
+<br>
+性别:<br>
+<input type="text" name="lastname" value="Mouse">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+<p>已有账户？<a href = "http://localhost:8080/Login/getAllStudent" >点此</a>登陆</p>
+<!--
     <table>
         <!-- 名称 -->
         <thead>
@@ -29,5 +40,6 @@
              </tr>
          </tbody>
     </table>
+    -->
 </body>
 </html>
