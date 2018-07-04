@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <script>
   $(document).ready(function() {
 $("button").addClass("animated bounce");
@@ -26,7 +27,7 @@ $("button").addClass("animated bounce");
     <title>Sample</title>
 </head>
 <body>
-<div class = "main">
+<div class = "main container-fluid" >
 <h1>请登录</h1>
 <form action = "#">
 用户名 <input type = "text" placeholder = "必填" required> <br/>

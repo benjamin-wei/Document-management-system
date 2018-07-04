@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <script>
   $(document).ready(function() {
 $("button").addClass("animated bounce");
@@ -25,7 +26,7 @@ $("button").addClass("animated bounce");
     <title>Sample</title>
 </head>
 <body>
-<div class = "main" >
+<div class = "main container-fluid" >
     <h1 th:inline="text">能力规范文稿管理系统</h1>
     <h2> 写者    |    管理<h2>
     <p>提案列表</p>
@@ -64,7 +65,9 @@ $("button").addClass("animated bounce");
 <form action = "#">
 
 <button type = "submit"> 打印 </button>
-<button type = "submit"> 撤销 </button>
+<button type = "submit"> 撤销 </button> <br/>
+<a href = "http://localhost:8080/compile" >提案编制</a> <br/>
+<a href = "http://localhost:8080/maintain" >信息维护</a>
 </form>
 </div>
 </body>

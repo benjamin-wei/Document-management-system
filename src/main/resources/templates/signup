@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <script>
   $(document).ready(function() {
 $("button").addClass("animated bounce");
@@ -25,14 +26,14 @@ $("button").addClass("animated bounce");
     <title>Sample</title>
 </head>
 <body>
-<div class = "main" >
+<div class = "main container-fluid" >
 <img class = "img-responsive" src = "sample/src/images/rocket.PNG">
     <h1 th:inline="text">能力规范文稿管理系统</h1>
     <h2> 入会申请<h2>
 <form action = "#">
 姓名 <input type = "text" placeholder = "必填" required> <br/>
 性别 <input type = "text" placeholder = "必填" required> <br/>
-出生日期 <input type = "text" placeholder = "必填" required> <br/>
+出生日期 <input type = "text" placeholder = "必填,六位数字" required> <br/>
 家庭住址<input type = "text" > <br/>
 联系方式<input type = "text" placeholder = "必填" required> <br/>
 推荐人<input type = "text" > <br/>
