@@ -8,6 +8,7 @@
     <title>Sample</title>
 </head>
 <body>
+<img class = "img-responsive" src = "/images/rocket.jpg">
     <h1 th:inline="text">能力规范文稿管理系统</h1>
     <h2> 入会申请<h2>
 <form action = "#">
