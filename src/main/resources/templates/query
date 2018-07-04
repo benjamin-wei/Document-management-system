@@ -27,7 +27,8 @@ $("button").addClass("animated bounce");
 </head>
 <body>
 <div class = "main container-fluid" >
-    <h1 th:inline="text">能力规范文稿管理系统</h1>
+    <h1 th:inline="text">能力规范文稿管理系统</h1> <br/>
+    <a href = "http://localhost:8080/Login" >注销</a>
     <h2> 写者    |    管理<h2>
     <p>提案列表</p>
     <table border="10" class = "dataintable">

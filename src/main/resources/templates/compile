@@ -61,7 +61,8 @@ $("button").addClass("animated bounce");
             </tr>
         </table>
         <button type = "#"> 打印 </button>
-        <button type = "#"> 撤销 </button>
+        <button type = "#"> 撤销 </button> <br/>
+        <a href = "http://localhost:8080/query" >返回</a>
     </form>
 
 </div>

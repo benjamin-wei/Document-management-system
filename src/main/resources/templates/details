@@ -64,8 +64,8 @@ $("button").addClass("animated bounce");
                         <td>xxx</td>
                         <td></td>
         </tr>
-    </table>
-<button type = "#"> 返回 </button>
+    </table> <br/>
+<button type = "#"> <a href = "http://localhost:8080/query" >返回</a> </button>
 </div>
 </body>
 </html>
