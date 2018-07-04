@@ -2,12 +2,26 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <style>
+.main{
+    text-align: center; /*让div内部文字居中*/
+    background-color: #fff;
+    border-radius: 20px;
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
     p {font-size: 16px;}
 </style>
 <head>
     <title>Sample</title>
 </head>
 <body>
+<div class = "main">
 <h1>请登录</h1>
 <form action = "#">
 用户名 <input type = "text" placeholder = "必填" required> <br/>
@@ -18,5 +32,6 @@
 <h2>规范列表<h2> <br/>
 <p style = "color: blue">关于草案评审的工作规范………………………………………………2017/06/01</p>
 <p>管理系统申请自个规范……………………………………………………2017/05/30</p>
+</div>
 </body>
 </html>
