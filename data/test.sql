@@ -20,20 +20,24 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 --  Table structure for `student`
 -- ----------------------------
-DROP TABLE IF EXISTS `student`;
-CREATE TABLE `student` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `no` varchar(100) CHARACTER SET utf8 DEFAULT '120812' COMMENT '学号',
+DROP TABLE IF EXISTS `management`;
+CREATE TABLE `management` (
   `name` varchar(100) CHARACTER SET utf8 DEFAULT 'Tom' COMMENT '姓名',
-  `score` double(10,2) DEFAULT '0.00' COMMENT '分数',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='学生表';
+  `sex` varchar(100) CHARACTER SET utf8 DEFAULT '男' COMMENT '性别',
+  `birth` INT(11) DEFAULT '00000000' COMMENT '生日',
+  `homeAddress` varchar(100) CHARACTER SET utf8 DEFAULT 'Beijing' COMMENT '家庭住址',
+  `telephone` INT(11) DEFAULT '00000000000' COMMENT '联系方式',
+  `recommender` varchar(100) CHARACTER SET utf8 DEFAULT 'Tom' COMMENT '推荐人',
+   `industryClub`varchar(100) CHARACTER SET utf8 DEFAULT 'ccc' COMMENT '行业分会',
+  `specialCommittee`varchar(100) CHARACTER SET utf8 DEFAULT 'ddd' COMMENT '专委会',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 
 -- ----------------------------
 --  Records of `student`
 -- ----------------------------
 BEGIN;
-INSERT INTO `student` VALUES ('1', 'S201625001', '张三', '85.60'), ('2', 'S201625002', '李四', '90.45');
+INSERT INTO `management` VALUES ('张三', '男','19980314','北京','1236382946','aa','b11','c11'), ('李四', '男','19980711','北京','1278201262','bb','d11','c51');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
