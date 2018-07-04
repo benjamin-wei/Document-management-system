@@ -65,8 +65,8 @@ $("button").addClass("animated bounce");
     </table>
 <form action = "#">
 
-<button type = "submit"> 打印 </button>
-<button type = "submit"> 撤销 </button> <br/>
+<button class = "btn-primary" type = "submit"> 打印 </button>
+<button class = "btn-danger" type = "submit"> 撤销 </button> <br/>
 <a href = "http://localhost:8080/compile" >提案编制</a> <br/>
 <a href = "http://localhost:8080/maintain" >信息维护</a>
 </form>

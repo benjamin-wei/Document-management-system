@@ -29,7 +29,7 @@ $("button").addClass("animated bounce");
 <div class = "main container-fluid" >
 <!-- <img class = "img-responsive" src = "sample/src/images/rocket.PNG"> -->
     <h1 th:inline="text">能力规范文稿管理系统</h1>
-    <h2> 入会申请<h2>
+    <h2 class = "text-center"> 入会申请<h2>
 <form action = "#">
 用户名 <input type = "text" placeholder = "必填" required> <br/>
 密码 <input type = "text" placeholder = "必填" required> <br/>
@@ -51,7 +51,7 @@ $("button").addClass("animated bounce");
            <option value="committee3">专委会3</option>
            <option value="committee4">专委会4</option>
          </select> <br/>
-<button type = "submit"> 提交 </button>
+<button  class = "btn-info btn-block" type = "submit"> 提交 </button>
 </form>
 <p>已有账户？<a href = "http://localhost:8080/Login" >点此</a>登陆</p>
 </div>
