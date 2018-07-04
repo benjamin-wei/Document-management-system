@@ -18,7 +18,7 @@ SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
---  Table structure for `student`
+--  Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `management`;
 CREATE TABLE `management` (
@@ -34,7 +34,7 @@ CREATE TABLE `management` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 
 -- ----------------------------
---  Records of `student`
+--  Records of `user`
 -- ----------------------------
 BEGIN;
 INSERT INTO `management` VALUES ('张三', '男','19980314','北京','1236382946','aa','b11','c11'), ('李四', '男','19980711','北京','1278201262','bb','d11','c51');
