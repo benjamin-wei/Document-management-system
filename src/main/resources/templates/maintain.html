@@ -1,26 +1,26 @@
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <script>
-  $(document).ready(function() {
-$("button").addClass("animated bounce");
-  });
+    $(document).ready(function() {
+        $("button").addClass("animated bounce");
+    });
 </script>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <style>
-.main{
-    text-align: center; /*让div内部文字居中*/
-    background-color: #fff;
-    border-radius: 20px;
-    width: 300px;
-    height: 350px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+    .main{
+        text-align: center; /*让div内部文字居中*/
+        background-color: #fff;
+        border-radius: 20px;
+        width: 800px;
+        height: 500px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 </style>
 <head>
     <title>Sample</title>
@@ -28,9 +28,9 @@ $("button").addClass("animated bounce");
 <body>
 <div class = "main container-fluid" >
     <h1 th:inline="text">能力规范文稿管理系统</h1>
-    <h2> 写者    |    管理<h2>
-    <p>信息维护</p>
-    <table  width = "100%" border="1">
+    <h2> 写者&emsp;&emsp;|&emsp;&emsp;管理</h2> <br/>
+    <p style = "font-size: 30px">信息维护</p> <br/>
+        <table  width = "100%" border="1">
             <tr>
                 <th>序号</th>
                 <th>姓名</th>
@@ -52,14 +52,14 @@ $("button").addClass("animated bounce");
                 <td></td>
             </tr>
             <tr>
-                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </table> <br/>
         <a href = "http://localhost:8080/query" >返回</a>
