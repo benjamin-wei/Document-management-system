@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Student;
+import com.example.demo.entity.*;
 
 import java.util.List;
 
@@ -13,5 +13,7 @@ import java.util.List;
 public interface StudentService {
 
     List<Student> getAllStudent();
+
+    List<Proposal> getAllProposal();
 
 }

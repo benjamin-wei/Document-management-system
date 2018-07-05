@@ -39,7 +39,7 @@ $("button").addClass("animated bounce");
     <button type = "submit"> 打印 </button>
     </form>
     <form action = "#">
-    <table border="10" class = "dataintable">
+    <table width = "100%"  border="1" class = "dataintable">
             <tr>
                 <th><label><input type="checkbox" name="#"> 全选</label></th>
                 <th>提案ID</th>

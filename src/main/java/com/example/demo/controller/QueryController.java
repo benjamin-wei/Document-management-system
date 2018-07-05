@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Proposal;
 import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,9 @@ public class QueryController {
     private StudentService studentService;
 
     @RequestMapping(value = "/query",method = RequestMethod.GET)
-    public String login(HttpServletRequest request){
+    public String query(HttpServletRequest request){
+        List<Proposal> list = studentService.getAllProposal();
+        request.setAttribute("proposals",list);
         return "query";
     }
 

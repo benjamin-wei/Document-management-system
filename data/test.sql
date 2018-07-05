@@ -43,20 +43,23 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------
 --  Table structure for `Writer`
 -- ----------------------------
-DROP TABLE IF EXISTS `Writer`;
-CREATE TABLE `Writer`(
-   `id`int(11)NOT NULL AUTO_INCREMENT,
-    `proName`varchar(100)CHARACTER SET utf8 DEFAULT 'abc'COMMENT'提案名称',
-    `proWriter`varchar(100)CHARACTER SET utf8 DEFAULT'Tom'COMMENT'提案作者',
-    `deadline`int(11)DEFAULT'00000000'COMMENT'截止日期',
-    `status`varchar(100)DEFAULT'ACCEPT'COMMENT'状态',
-    `result`int(11)DEFAULT'0'COMMENT'提交结果',
+/* 提案*/
+DROP TABLE IF EXISTS `proposal`;
+CREATE TABLE `proposal`(
+   `id`int(11)NOT NULL AUTO_INCREMENT comment '编号id',
+    `proName`varchar(100)CHARACTER SET utf8 COMMENT'提案名称',
+    `proWriter`varchar(100)CHARACTER SET utf8 COMMENT'提案作者',
+    `deadline`int(11) COMMENT'截止日期',
+    `status`varchar(100) CHARACTER SET utf8 COMMENT'状态',
+    `agree` int(11) comment '附议数',
+    `oppose` int(11) comment '反对数',
+    `content` varchar(1000) CHARACTER SET utf8 comment '提案内容',
 PRIMARY KEY(`id`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 -- ----------------------------
 --  Records of `Writer`
 -- ----------------------------
 BEGIN;
-INSERT INTO `Writer` VALUES('01','AAA','aaa','20051102','ACCEPT','0'),('02','BBB','bbb','20080908','UNACCEPT','1'),('03','CCC','ccc','20100208','ACCEPT','0');
+INSERT INTO `proposal` VALUES('01','改宪法','习近平','20180705','通过','100','0','删除不能连任的相关内容');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;

@@ -31,7 +31,7 @@ $("button").addClass("animated bounce");
     <a href = "http://localhost:8080/Login" >注销</a>
     <h2> 写者    |    管理<h2>
     <p>提案列表</p>
-    <table border="10" class = "dataintable">
+    <table width = "100%" border="1" class = "dataintable">
         <tr>
             <th><label><input type="checkbox" name="#"> 全选</label></th>
             <th>编号</th>
@@ -42,15 +42,15 @@ $("button").addClass("animated bounce");
             <th>附议数</th>
             <th>反对数</th>
         </tr>
-        <tr>
+        <tr th:each="p,iterStat : ${proposals}" th:class="${iterStat.odd}? 'odd'">
             <td><label><input type="checkbox" name="#"></label></td>
-            <td></td>
-            <td><a href = "http://localhost:8080/details" >xxxxxxxx</a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td th:text="${p.getId()}"></td>
+            <td th:text="${p.getProName()}"></td>
+            <td th:text="${p.getProWriter()}"></td>
+            <td th:text="${p.getDeadline()}"></td>
+            <td th:text="${p.getStatus()}"></td>
+            <td th:text="${p.getAgree()}"></td>
+            <td th:text="${p.getOppose()}"></td>
         </tr>
         <tr>
             <td><label><input type="checkbox" name="#"></label></td>

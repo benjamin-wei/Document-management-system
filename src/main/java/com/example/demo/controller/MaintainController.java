@@ -15,7 +15,7 @@ import java.util.List;
  * @create 2018-07-01
  **/
 @Controller
-public class maintainController {
+public class MaintainController {
 
     @Autowired
     private StudentService studentService;

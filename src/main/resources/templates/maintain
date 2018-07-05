@@ -30,7 +30,7 @@ $("button").addClass("animated bounce");
     <h1 th:inline="text">能力规范文稿管理系统</h1>
     <h2> 写者    |    管理<h2>
     <p>信息维护</p>
-    <table border="10">
+    <table  width = "100%" border="1">
             <tr>
                 <th>序号</th>
                 <th>姓名</th>

@@ -1,7 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.dao.StudentDAO;
-import com.example.demo.entity.Student;
+import com.example.demo.entity.*;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,4 +24,6 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getAllStudent() {
         return studentDAO.getAllStudent();
     }
+
+    public List<Proposal> getAllProposal() {return studentDAO.getAllProposal();}
 }
