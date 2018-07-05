@@ -44,9 +44,15 @@
                 <td th:text="${p.getDeadline()}"></td>
             </tr>
         </table> <br/>
-        <p style = "font-size: 30px">提案内容</p> <br/>
+    <table width = "100%" border="1">
+        <tr th:each="p,iterStat : ${proposals}" th:class="${iterStat.odd}? 'odd'">
+            <th style = "font-size: 30px">提案内容</th>
+            <th th:text="${p.getContent()}"></th>
+        </tr>
+    </table>
+    <br/> <br/>
         <form action = "#">
-            <input type = "text" > <br/> <br/>
+            我要评论：<input type = "text" > <br/> <br/>
             <label><input type="radio" name="#"> 附议</label>
             <label><input type = "radio" name = "#"> 反对</label>
             <button class = "btn-info " type = "submit"> 提交 </button>
