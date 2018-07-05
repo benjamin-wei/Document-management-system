@@ -61,5 +61,6 @@ PRIMARY KEY(`id`)
 -- ----------------------------
 BEGIN;
 INSERT INTO `proposal` VALUES('01','改宪法','习近平','20180705','通过','100','0','删除不能连任的相关内容');
+INSERT INTO `proposal` VALUES('02','','习近平','20180705','通过','100','0','删除不能连任的相关内容');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
