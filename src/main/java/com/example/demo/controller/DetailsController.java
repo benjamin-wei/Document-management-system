@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Student;
+import com.example.demo.entity.*;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,11 +20,10 @@ public class DetailsController {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping(value = "/details",method = RequestMethod.GET)
-    public String login(HttpServletRequest request){
+    @RequestMapping(value = "/details", method = RequestMethod.GET)
+    public String query(HttpServletRequest request) {
+        List<Proposal> list = studentService.getAllProposal();
+        request.setAttribute("proposals", list);
         return "details";
     }
-
-
-
 }

@@ -46,7 +46,7 @@
             <tr th:each="p,iterStat : ${proposals}" th:class="${iterStat.odd}? 'odd'">
                 <td><label><input type="checkbox" name="#"></label></td>
                 <td th:text="${p.getId()}"></td>
-                <td><a th:text="${p.getProName()}" th:href="@{/details}">hh</a></td>
+                <td><a th:text="${p.getProName()}" th:href="@{/details}"></a></td>
                 <td th:text="${p.getProWriter()}"></td>
                 <td th:text="${p.getDeadline()}"></td>
                 <td th:text="${p.getStatus()}"></td>

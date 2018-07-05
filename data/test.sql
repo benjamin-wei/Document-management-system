@@ -61,6 +61,6 @@ PRIMARY KEY(`id`)
 -- ----------------------------
 BEGIN;
 INSERT INTO `proposal` VALUES('01','改宪法','习近平','20180705','通过','100','0','删除不能连任的相关内容');
-INSERT INTO `proposal` VALUES('02','','习近平','20180705','通过','100','0','删除不能连任的相关内容');
+INSERT INTO `proposal` VALUES('02','医疗改革1','市政府','20200311','审核中','74','26','将挂号费改为医事服务费');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
