@@ -66,3 +66,33 @@ INSERT INTO `proposal` VALUES('02','医疗改革1','市政府','20200311','审�
 delete from proposal where id = 02;
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
+
+/*用户表*/
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`(
+    `userName`varchar(100)CHARACTER SET utf8 COMMENT'用户名',
+    `passWord`varchar(100)CHARACTER SET utf8 COMMENT'密码',
+    `name`varchar(100)CHARACTER SET utf8 COMMENT'姓名',
+    `gender`varchar(100)CHARACTER SET utf8 COMMENT'性别',
+   `birthday`int(11)NOT NULL COMMENT'出生日期',
+   `address`varchar(100)CHARACTER SET utf8 COMMENT'家庭住址',
+   `conWay`varchar(100)CHARACTER SET utf8 COMMENT'联系方式',
+   `referrer`varchar(100)CHARACTER SET utf8 COMMENT'推荐人',
+   `assoName`varchar(100)CHARACTER SET utf8 COMMENT'会名',
+    `isAdmin` tinyint(1) COMMENT'是否管理员，1为管理员，0为写者',
+PRIMARY KEY(`userName`)
+)ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
+-- ----------------------------
+--  Records of `Writer`
+-- ----------------------------
+BEGIN;
+INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','林雨','行业分会','1');
+/*测试用sql语句*/
+INSERT INTO `user` VALUES('admin2','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','','专委会','1');
+COMMIT;
+SET FOREIGN_KEY_CHECKS = 1;
+delete from user where userName = admin2;
+
+
+/*推荐人表*/
