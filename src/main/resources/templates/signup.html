@@ -39,10 +39,10 @@
             家庭住址<input type = "text" th:field="*{address}" > <br/> <br/>
             联系方式<input type = "text" th:field="*{conWay}" placeholder = "必填" required> <br/> <br/>
             推荐人<input type = "text" th:field="*{referrer}" > <br/> <br/>
-            会名 <select>
-            <option th:field="*{assoName}" assoName = "行业分会" value="行业分会">行业分会</option>
-            <option th:field="*{assoName}" value="专委会">专委会</option>
-            <option th:field="*{assoName}" value="研究会">研究会</option>
+            会名 <select th:field="*{assoName}">
+            <option value="行业分会">行业分会</option>
+            <option value="专委会">专委会</option>
+            <option value="研究会">研究会</option>
         </select> <br/> <br/>
             <button  class = "btn-info " type = "submit"> 提交 </button>  <br/>
         </form>
