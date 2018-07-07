@@ -37,17 +37,17 @@
                 <th>作者</th>
                 <th>截止日期</th>
             </tr>
-            <tr th:each="p,iterStat : ${proposals}" th:class="${iterStat.odd}? 'odd'">
-                <td th:text="${p.getId()}"></td>
-                <td th:text="${p.getProName()}"></td>
-                <td th:text="${p.getProWriter()}"></td>
-                <td th:text="${p.getDeadline()}"></td>
+            <tr>
+                <td th:text="${id}"></td>
+                <td th:text="${proName}"></td>
+                <td th:text="${proWriter}"></td>
+                <td th:text="${deadline}"></td>
             </tr>
         </table> <br/>
     <table width = "100%" border="1">
-        <tr th:each="p,iterStat : ${proposals}" th:class="${iterStat.odd}? 'odd'">
+        <tr>
             <th style = "font-size: 30px">提案内容</th>
-            <th th:text="${p.getContent()}"></th>
+            <th th:text="${content}"></th>
         </tr>
     </table>
     <br/> <br/>

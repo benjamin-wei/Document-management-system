@@ -30,6 +30,7 @@
 <div class = "main container-fluid" >
     <h1>请登录</h1>
     <form th:action = "@{/login/verify}" th:method="get" th:object="${user}">
+        <p style="color: red" th:text="${message}"></p> <br/>
         用户名 <input type = "text" th:field="*{userName}" placeholder = "必填" required> <br/> <br/>
         密码 <input type = "text" th:field="*{passWord}" placeholder = "必填" required> <br/> <br/>
         <button btn-primary type = "submit">登陆</button>

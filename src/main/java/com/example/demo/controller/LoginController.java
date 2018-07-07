@@ -34,7 +34,8 @@ public class LoginController {
         if (isUser.equals(true)) {
             return "redirect:/query";
         }
-        return "redirect:/Login";
+        model.addAttribute("message", "用户名或密码错误，请重试！");
+        return "Login";
     }
 
 

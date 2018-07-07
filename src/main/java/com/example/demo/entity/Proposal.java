@@ -33,6 +33,19 @@ public class Proposal {
         return content;
     }
 
+    public Proposal getSelf() {
+        Proposal proposal = new Proposal();
+        proposal.id = this.id;
+        proposal.proName = this.proName;
+        proposal.proWriter = this.proWriter;
+        proposal.deadline = this.deadline;
+        proposal.status = this.status;
+        proposal.agree = this.agree;
+        proposal.oppose = this.oppose;
+        proposal.content = this.content;
+        return proposal;
+    };
+
     public void setId(int id) {
         this.id = id;
     }
