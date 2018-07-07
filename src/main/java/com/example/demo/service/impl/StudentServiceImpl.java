@@ -26,4 +26,26 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public List<Proposal> getAllProposal() {return studentDAO.getAllProposal();}
+
+    @Override
+    public boolean insert(User user) {
+        if (null == user){
+            return false;
+        }
+        // do something...
+        studentDAO.insert(user);
+        return true;
+    }
+
+    @Override
+    public boolean verify(User user) {
+        User userreturn = studentDAO.verify(user);
+        if (userreturn == null) {
+            return false;
+        }
+        if (userreturn.getPassWord().equals(user.getPassWord())){
+            return true;
+        }
+        return false;
+    }
 }

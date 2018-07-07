@@ -75,12 +75,12 @@ CREATE TABLE `user`(
     `passWord`varchar(100)CHARACTER SET utf8 COMMENT'密码',
     `name`varchar(100)CHARACTER SET utf8 COMMENT'姓名',
     `gender`varchar(100)CHARACTER SET utf8 COMMENT'性别',
-   `birthday`int(11)NOT NULL COMMENT'出生日期',
+   `birthday`int(11) COMMENT'出生日期',
    `address`varchar(100)CHARACTER SET utf8 COMMENT'家庭住址',
    `conWay`varchar(100)CHARACTER SET utf8 COMMENT'联系方式',
    `referrer`varchar(100)CHARACTER SET utf8 COMMENT'推荐人',
    `assoName`varchar(100)CHARACTER SET utf8 COMMENT'会名',
-    `isAdmin` tinyint(1) COMMENT'是否管理员，1为管理员，0为写者',
+    `isAdmin` int(1) DEFAULT '-1' COMMENT'是否管理员，1为管理员，0为写者,-1为审核未通过',
 PRIMARY KEY(`userName`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 -- ----------------------------

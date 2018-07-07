@@ -14,6 +14,10 @@ public interface StudentService {
 
     List<Student> getAllStudent();
 
+    boolean insert(User user);
+
+    boolean verify(User user);
+
     List<Proposal> getAllProposal();
 
 }
