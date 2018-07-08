@@ -24,15 +24,17 @@ public class CheckApplyController {
     private StudentService studentService;
 
     @RequestMapping(value = "/checkApply", method = RequestMethod.GET)
-    public String checkApply(@ModelAttribute("name") String name, HttpServletRequest request, Model model) {
-        User user = studentService.getUser(name);
-        request.setAttribute("name", user.getName());
+    public String checkApply(@ModelAttribute("username") String username, HttpServletRequest request, Model model) {
+        User user = studentService.getUser(username);
+        Referrer referrer = studentService.getReferrer(user.getReferrer());
+        request.setAttribute("name", user.getName());  /*传user属性给页面*/
         request.setAttribute("gender", user.getGender());
         request.setAttribute("birthday", user.getBirthday());
         request.setAttribute("address", user.getAddress());
         request.setAttribute("conWay", user.getConWay());
         request.setAttribute("referrer", user.getReferrer());
         request.setAttribute("assoName", user.getAssoName());
+        request.setAttribute("referrer", referrer); /*传referrer属性给页面*/
         return "checkApply";
     }
 

@@ -85,34 +85,38 @@
         <div class="card" style="width: 800px;">
             <div class="card-body">
                 <h5 class="card-title">会员推荐表</h5>
-                <table class="table">
+                <table class="table" th:object="${referrer}">
                     <tr>
                         <th>姓名</th>
-                        <td>张三</td>
+                        <td th:text="${referrer.getName()}"></td>
                     </tr>
                     <tr>
                         <th>单位</th>
-                        <td>xx</td>
+                        <td th:text="${referrer.getCompany()}"></td>
                     </tr>
                     <tr>
                         <th>电话</th>
-                        <td>abcdefghijk</td>
+                        <td th:text="${referrer.getPhone()}"></td>
                     </tr>
                     <tr>
                         <th>被推荐人</th>
-                        <td>张三</td>
+                        <td th:text="${name}"></td>
+                    </tr>
+                    <tr>
+                        <th>职称</th>
+                        <td th:text="${referrer.getJobTitle()}"></td>
                     </tr>
                     <tr>
                         <th>职务</th>
-                        <td>xxxxxxxxx</td>
+                        <td th:text="${referrer.getPosition()}"></td>
                     </tr>
                     <tr>
                         <th>邮箱</th>
-                        <td>xxxxx</td>
+                        <td th:text="${referrer.getEmail()}"></td>
                     </tr>
                     <tr>
                         <th>推荐原因</th>
-                        <td>xxxxxxxxx</td>
+                        <td th:text="${referrer.getReason()}"></td>
                     </tr>
 
                 </table>

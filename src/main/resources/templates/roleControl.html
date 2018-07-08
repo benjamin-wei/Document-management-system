@@ -91,20 +91,8 @@
                         <tr th:each="u,iterStat : ${users}" th:class="${iterStat.odd}? 'odd'">
                             <td><input type="checkbox" name="choose" value="choose?" /></td>
                             <td>1</td>
-                            <td th:text="${u.getUserName()}"></td>
-                            <td><a th:href="@{/checkApply(name=${u.getUserName()})}">查看</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="choose" value="choose?" /></td>
-                            <td>2</td>
-                            <th>姓名</th>
-                            <td>查看</td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="choose" value="choose?" /></td>
-                            <td>3</td>
-                            <th>姓名</th>
-                            <td>查看</td>
+                            <td th:text="${u.getName()}"></td>
+                            <td><a th:href="@{/checkApply(username=${u.getUserName()})}">查看</a></td>
                         </tr>
                         </tbody>
                     </table>

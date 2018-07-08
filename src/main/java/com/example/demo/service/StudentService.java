@@ -18,7 +18,9 @@ public interface StudentService {
 
     List<User> getAllUser();
 
-    User getUser(String name);
+    User getUser(String username);
+
+    Referrer getReferrer(String name);
 
     Proposal getProposal(int id);
 

@@ -87,7 +87,7 @@ PRIMARY KEY(`userName`)
 --  Records of `Writer`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','林雨','行业分会','1');
+INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','一位长者','行业分会','1');
 /*测试用sql语句*/
 INSERT INTO `user` VALUES('admin2','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','','专委会','1');
 COMMIT;
@@ -108,6 +108,17 @@ PRIMARY KEY(`comment`)
 INSERT INTO `comment` (id,name,comment) VALUES ('1','一位长者','轻关易道，通商宽衣');
 INSERT INTO `comment` VALUES ('1','一位长者','轻关易道，通商宽衣','2017-06-06 11:45:03');
 
-
-
 /*推荐人表*/
+DROP TABLE IF EXISTS `reffer`;
+CREATE TABLE `referrer`(
+    `name`varchar(100)CHARACTER SET utf8 COMMENT'推荐人姓名',
+    `company`varchar(100)CHARACTER SET utf8 COMMENT'单位',
+    `phone`varchar(100)CHARACTER SET utf8 COMMENT'电话',
+    `jobTitle` varchar(1000) CHARACTER SET utf8 COMMENT'职称',
+    `position`varchar(100)CHARACTER SET utf8 COMMENT'职务',
+    `email`varchar(100)CHARACTER SET utf8 COMMENT'邮箱',
+    `reason`varchar(100)CHARACTER SET utf8 COMMENT'推荐原因',
+PRIMARY KEY(`name`)
+)ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
+
+INSERT INTO `referrer` VALUES ('一位长者','BJUT','13030066666','主任医师','医生','BigBrother@gmail.com','长得好看');

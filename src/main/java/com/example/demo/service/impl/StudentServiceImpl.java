@@ -37,8 +37,13 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public User getUser(String name) {
-        return studentDAO.getUser(name);
+    public User getUser(String username) {
+        return studentDAO.getUser(username);
+    }
+
+    @Override
+    public Referrer getReferrer(String name) {
+        return studentDAO.getReferrer(name);
     }
 
     @Override
