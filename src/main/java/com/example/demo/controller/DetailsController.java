@@ -28,9 +28,16 @@ public class DetailsController {
 //        List<Comment> list = studentService.getAllComment();
 //        request.setAttribute("comments",list);
         List<Comment> list = studentService.getComment(id);
+
         request.setAttribute("comments", list);
+
         Proposal proposal = studentService.getProposal(id);
-        request.setAttribute("proposal", proposal);
+        request.setAttribute("id", proposal.getId());
+        request.setAttribute("name",proposal.getProName());
+        request.setAttribute("writer",proposal.getProWriter());
+        request.setAttribute("deadline",proposal.getDeadline());
+        request.setAttribute("content",proposal.getContent());
+
         return "details";
     }
 

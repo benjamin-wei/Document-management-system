@@ -25,14 +25,14 @@ public class CheckApplyController {
 
     @RequestMapping(value = "/checkApply", method = RequestMethod.GET)
     public String checkApply(@ModelAttribute("name") String name, HttpServletRequest request, Model model) {
-        String test = name;
-        System.out.println(test);
         User user = studentService.getUser(name);
-        request.setAttribute("user", user);
-//        List<Comment> list = studentService.getComment(id);
-//        request.setAttribute("comments", list);
-//        Proposal proposal = studentService.getProposal(id);
-//        request.setAttribute("proposal", proposal);
+        request.setAttribute("name", user.getName());
+        request.setAttribute("gender", user.getGender());
+        request.setAttribute("birthday", user.getBirthday());
+        request.setAttribute("address", user.getAddress());
+        request.setAttribute("conWay", user.getConWay());
+        request.setAttribute("referrer", user.getReferrer());
+        request.setAttribute("assoName", user.getAssoName());
         return "checkApply";
     }
 

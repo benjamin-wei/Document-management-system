@@ -28,8 +28,8 @@ public interface StudentDAO {
             "VALUE(#{userName},#{passWord},#{name},#{gender},#{birthday},#{address},#{conWay},#{referrer},#{assoName},#{isAdmin})")
     int insert(User user);
 
-    @Insert(value = "INSERT INTO comment(comment.`id`,comment.`name`,comment.`comment`) VALUES (#{id},'一位长者',#{content})")
-    int insertCon(int id, String ccontent);
+    @Insert(value = "INSERT INTO comment(comment.`id`,comment.`name`,comment.`comment`) VALUES (#{iddd},'一位长者',#{content})")
+    int insertCon(int iddd, String content);
 
     @Select(value = "SELECT * FROM comment")
     List<Comment> getAllComment();
@@ -40,7 +40,7 @@ public interface StudentDAO {
     @Select(value = "SELECT * FROM proposal where id = #{id}")
     Proposal getProposal(int id);
 
-    @Select(value = "SELECT * FROM user where name = #{name}")
+    @Select(value = "SELECT * FROM user WHERE `username` = #{name}")
     User getUser(String name);
 
     @Select(value = "SELECT * FROM proposal")
