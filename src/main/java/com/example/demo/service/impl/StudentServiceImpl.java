@@ -27,6 +27,18 @@ public class StudentServiceImpl implements StudentService {
 
     public List<Proposal> getAllProposal() {return studentDAO.getAllProposal();}
 
+    public List<Comment> getAllComment() {return studentDAO.getAllComment();}
+
+    @Override
+    public Proposal getProposal(int id) {
+        return studentDAO.getProposal(id);
+    }
+
+    @Override
+    public List<Comment> getComment(int id) {
+        return studentDAO.getComment(id);
+    }
+
     @Override
     public boolean insert(User user) {
         if (null == user){

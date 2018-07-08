@@ -94,5 +94,20 @@ COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
 delete from user where userName = admin2;
 
+/*评论表*/
+
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`(
+    `id`int(11) COMMENT'对应提案的id',
+    `name`varchar(100)CHARACTER SET utf8 COMMENT'评论人',
+    `comment` varchar(1000) CHARACTER SET utf8 COMMENT'评论内容',
+    `time` TIMESTAMP NOT NULL default CURRENT_TIMESTAMP COMMENT'评论时间,格式为YYYY-MM-DD HH:MM:SS',
+PRIMARY KEY(`comment`)
+)ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
+/*自动补上系统时间的写法*/
+INSERT INTO `comment` (id,name,comment) VALUES ('1','一位长者','轻关易道，通商宽衣');
+INSERT INTO `comment` VALUES ('1','一位长者','轻关易道，通商宽衣','2017-06-06 11:45:03');
+
+
 
 /*推荐人表*/

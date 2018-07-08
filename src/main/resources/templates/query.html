@@ -22,19 +22,39 @@
         bottom: 0;
     }
 </style>
+<div class = "main container-fluid" >
 <head>
+    <script type="text/javascript"
+
+            src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //checkbox 全选/取消全选
+        var isCheckAll = false;
+        function swapCheck() {
+            if (isCheckAll) {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = false;
+                });
+                isCheckAll = false;
+            } else {
+                $("input[type='checkbox']").each(function() {
+                    this.checked = true;
+                });
+                isCheckAll = true;
+            }}
+    </script>
     <meta charset="UTF-8">
     <title>Sample</title>
 </head>
 <body>
-<div class = "main container-fluid" >
+
     <h1 th:inline="text">能力规范文稿管理系统</h1> <br/>
         <a href = "http://localhost:8080/Login" >注销</a>
         <h2> 写者&emsp;&emsp;|&emsp;&emsp;管理</h2> <br/>
         <p style = "font-size: 30px">提案列表</p> <br/>
         <table width = "100%" border="1">
             <tr>
-                <th><label><input type="checkbox" name="#"> 全选</label></th>
+                <th><input type="checkbox" onclick="swapCheck()"name="choose" value="choose?" />全选</th>
                 <th>编号</th>
                 <th>提案名称</th>
                 <th>作者</th>
@@ -44,9 +64,9 @@
                 <th>反对数</th>
             </tr>
             <tr th:each="p,iterStat : ${proposals}" th:class="${iterStat.odd}? 'odd'">
-                <td><label><input type="checkbox" name="#"></label></td>
+                <td><input type="checkbox" name="choose" value="choose?" /></td>
                 <td th:text="${p.getId()}"></td>
-                <td><a th:text="${p.getProName()}" th:href="@{/details(id=${p.getId()},proName=${p.getProName()},proWriter=${p.getProWriter()},deadline=${p.getDeadline()},status=${p.getStatus()},agree=${p.getAgree()},oppose=${p.getOppose()},content=${p.getContent()})}"></a></td>
+                <td><a th:text="${p.getProName()}" th:href="@{/details(id=${p.getId()})}"></a></td>
                 <td th:text="${p.getProWriter()}"></td>
                 <td th:text="${p.getDeadline()}"></td>
                 <td th:text="${p.getStatus()}"></td>

@@ -14,6 +14,12 @@ public interface StudentService {
 
     List<Student> getAllStudent();
 
+    List<Comment> getAllComment();
+
+    Proposal getProposal(int id);
+
+    List<Comment> getComment(int id);
+
     boolean insert(User user);
 
     boolean verify(User user);

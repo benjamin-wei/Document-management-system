@@ -25,6 +25,15 @@ public interface StudentDAO {
             "VALUE(#{userName},#{passWord},#{name},#{gender},#{birthday},#{address},#{conWay},#{referrer},#{assoName},#{isAdmin})")
     int insert(User user);
 
+    @Select(value = "SELECT * FROM comment")
+    List<Comment> getAllComment();
+
+    @Select(value = "SELECT * FROM comment where id = #{id}")
+    List<Comment> getComment(int id);
+
+    @Select(value = "SELECT * FROM proposal where id = #{id}")
+    Proposal getProposal(int id);
+
     @Select(value = "SELECT * FROM proposal")
     List<Proposal> getAllProposal();
 
