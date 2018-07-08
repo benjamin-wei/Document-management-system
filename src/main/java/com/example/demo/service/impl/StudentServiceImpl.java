@@ -25,6 +25,8 @@ public class StudentServiceImpl implements StudentService {
         return studentDAO.getAllStudent();
     }
 
+    public List<User> getAllUser() {return studentDAO.getAllUser();}
+
     public List<Proposal> getAllProposal() {return studentDAO.getAllProposal();}
 
     public List<Comment> getAllComment() {return studentDAO.getAllComment();}
@@ -32,6 +34,11 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Proposal getProposal(int id) {
         return studentDAO.getProposal(id);
+    }
+
+    @Override
+    public User getUser(String name) {
+        return studentDAO.getUser(name);
     }
 
     @Override
@@ -46,6 +53,16 @@ public class StudentServiceImpl implements StudentService {
         }
         // do something...
         studentDAO.insert(user);
+        return true;
+    }
+
+    @Override
+    public boolean insertCon(int id, String content) {
+        if (null == content || id == 0){
+            return false;
+        }
+        // do something...
+        studentDAO.insertCon(id, content);
         return true;
     }
 

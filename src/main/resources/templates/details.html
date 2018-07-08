@@ -52,7 +52,7 @@
     </table>
     <br/> <br/>
         <form th:action = "@{/comment/insert(id=${proposal.getId()})}" th:method="get">
-            我要评论：<input type = "text" th:field="*{comment}"> <br/> <br/>
+             我要评论：<input type = "text" name = "comment"> <br/> <br/>
             <label><input type="radio" name="#"> 附议</label>
             <label><input type = "radio" name = "#"> 反对</label>
             <button class = "btn-info " type = "submit"> 提交 </button>

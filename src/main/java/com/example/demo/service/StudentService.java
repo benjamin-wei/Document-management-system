@@ -16,9 +16,15 @@ public interface StudentService {
 
     List<Comment> getAllComment();
 
+    List<User> getAllUser();
+
+    User getUser(String name);
+
     Proposal getProposal(int id);
 
     List<Comment> getComment(int id);
+
+    boolean insertCon(int id, String content);
 
     boolean insert(User user);
 

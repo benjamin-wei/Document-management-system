@@ -24,7 +24,7 @@ public class DetailsController {
     private StudentService studentService;
 
     @RequestMapping(value = "/details", method = RequestMethod.GET)
-    public String query(@ModelAttribute("id")  int id, @ModelAttribute("comment")  String comment,HttpServletRequest request, Model model) {
+    public String query(@ModelAttribute("id")  int id, HttpServletRequest request, Model model) {
 //        List<Comment> list = studentService.getAllComment();
 //        request.setAttribute("comments",list);
         List<Comment> list = studentService.getComment(id);
@@ -32,5 +32,12 @@ public class DetailsController {
         Proposal proposal = studentService.getProposal(id);
         request.setAttribute("proposal", proposal);
         return "details";
+    }
+
+    @RequestMapping(value = "/comment/insert",method = RequestMethod.GET)
+    public String insert(@ModelAttribute("id")  int id, HttpServletRequest request, Model model){
+        String content = request.getParameter("comment");
+        studentService.insertCon(id,content);
+        return "redirect:/details";
     }
 }
