@@ -44,7 +44,7 @@ public class QueryController {
     public String query(HttpServletRequest request){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "Login";
+            return "redirect:/Login";
         }
         request.setAttribute("user", user);
         List<Proposal> list = studentService.getAllProposal();

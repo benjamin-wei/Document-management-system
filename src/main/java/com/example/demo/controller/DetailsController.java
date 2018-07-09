@@ -79,7 +79,7 @@ public class DetailsController {
     public String insert(@ModelAttribute("comment")  Comment comment, HttpServletRequest request, Model model){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "Login";
+            return "redirect:/Login";
         }
         request.setAttribute("user", user);
 //        int id = request.getParameter("id");

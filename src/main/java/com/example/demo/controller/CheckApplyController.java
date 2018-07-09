@@ -44,7 +44,7 @@ public class CheckApplyController {
     public String checkApply(@ModelAttribute("username") String username, HttpServletRequest request, Model model) {
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "Login";
+            return "redirect:/Login";
         }
         request.setAttribute("user", user);
         User user2 = studentService.getUser(username);
