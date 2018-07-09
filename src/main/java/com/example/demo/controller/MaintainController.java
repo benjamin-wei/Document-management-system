@@ -7,6 +7,7 @@ import com.example.demo.entity.User;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -41,10 +42,12 @@ public class MaintainController {
     private StudentService studentService;
 
     @RequestMapping(value = "/maintain",method = RequestMethod.GET)
-    public String login(HttpServletRequest request){
+    public String login(HttpServletRequest request, Model model){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "redirect:/Login";
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
+            return "Login";
         }
         request.setAttribute("user", user);
         List<Referrer> list = studentService.getAllReferrer();

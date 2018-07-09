@@ -14,6 +14,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,17 +42,29 @@ public class RoleControlController {
     private StudentService studentService;
 
     @RequestMapping(value = "/roleControl",method = RequestMethod.GET)
-    public String roleQuery(HttpServletRequest request){
+    public String roleQuery(HttpServletRequest request, Model model){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null ) {
-            return "redirect:/Login";
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
+            return "Login";
         }
         if (user.getIsAdmin() == 1) {
-            return "redirect:/query";
+            request.setAttribute("user", user);
+            List<Proposal> list = studentService.getAllProposal();
+            request.setAttribute("proposals",list);
+            model.addAttribute("message", "您不是管理员，无法使用高级功能");
+            return "query";
         }
         request.setAttribute("user", user);
         List<User> userlist = studentService.getAllUser();
-        request.setAttribute("users",userlist);
+        List<User> nobody = new ArrayList<>();         //终于写上稍微有点技术含量（正经）的java代码了……
+        for (User u: userlist) {
+            if (u.getIsAdmin() == 0) {
+                nobody.add(u);
+            }
+        }
+        request.setAttribute("users",nobody);
         return "roleControl";
     }
 

@@ -76,6 +76,24 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public  boolean userAgree(User user) {
+        if (user == null) {
+            return false;
+        }
+        studentDAO.userAgree(user);
+        return true;
+    }
+
+    @Override
+    public  boolean userReject(User user) {
+        if (user == null) {
+            return false;
+        }
+        studentDAO.userReject(user);
+        return true;
+    }
+
+    @Override
     public boolean insertPro(String proName, String proWriter,String content) {
         if (null == proName || null == content || null == proWriter){
             return false;

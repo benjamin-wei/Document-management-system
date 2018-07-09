@@ -44,12 +44,13 @@ PRIMARY KEY(`userName`)
 -- ----------------------------
 BEGIN;
 INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','一位长者','行业分会','2');
-INSERT INTO `user` VALUES('admin2','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','蜂花护发素','专委会','1');
+INSERT INTO `user` VALUES('writer1','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','蜂花护发素','专委会','1');
+INSERT INTO `user` VALUES('nobody1','1045','rose','女','19900721','海边','海螺','蜂花护发素','研究会','0');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
 /*测试用sql语句*/
 select * from user;
-delete from user where userName = 'writer1';
+delete from user where userName = 'nobody1';
 
 /*评论表*/
 
