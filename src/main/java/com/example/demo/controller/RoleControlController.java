@@ -43,8 +43,11 @@ public class RoleControlController {
     @RequestMapping(value = "/roleControl",method = RequestMethod.GET)
     public String roleQuery(HttpServletRequest request){
         User user = (User)getSession().getAttribute("usersession");
-        if (user == null) {
-            return "Login";
+        if (user == null ) {
+            return "redirect:/Login";
+        }
+        if (user.getIsAdmin() == 0) {
+            return "redirect:/query";
         }
         request.setAttribute("user", user);
         List<User> userlist = studentService.getAllUser();

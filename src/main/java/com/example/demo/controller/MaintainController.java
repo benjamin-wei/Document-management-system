@@ -44,7 +44,7 @@ public class MaintainController {
     public String login(HttpServletRequest request){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "Login";
+            return "redirect:/Login";
         }
         request.setAttribute("user", user);
         List<Referrer> list = studentService.getAllReferrer();

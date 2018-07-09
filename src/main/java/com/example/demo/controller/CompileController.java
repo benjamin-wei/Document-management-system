@@ -58,7 +58,7 @@ public class CompileController {
     public String insert(@ModelAttribute("proposal") Proposal proposal, HttpServletRequest request, Model model) {
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "Login";
+            return "redirect:/Login";
         }
         request.setAttribute("user", user);
         String proName = proposal.getProName();

@@ -43,7 +43,10 @@ public class Approve2Controller {
     public String approve(HttpServletRequest request){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "Login";
+            return "redirect:/Login";
+        }
+        if (user.getIsAdmin() == 0 || !user.getAssoName().equals("行业分会")) {
+            return "redirect:/query";
         }
         request.setAttribute("user", user);
         List<Proposal> list = studentService.getAllProposal();
