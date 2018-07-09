@@ -4,10 +4,10 @@ CREATE TABLE `proposal`(
    `id`int(11)NOT NULL AUTO_INCREMENT comment '编号id',
     `proName`varchar(100)CHARACTER SET utf8 COMMENT'提案名称',
     `proWriter`varchar(100)CHARACTER SET utf8 COMMENT'提案作者',
-    `deadline`int(11) COMMENT'截止日期',
-    `status`varchar(100) CHARACTER SET utf8 COMMENT'状态',
-    `agree` int(11) comment '附议数',
-    `oppose` int(11) comment '反对数',
+    `deadline`int(11) NOT NULL DEFAULT 20201105 COMMENT'截止日期',
+    `status`varchar(100) CHARACTER SET utf8 DEFAULT '审核中' COMMENT'状态',
+    `agree` int(11) NOT NULL DEFAULT 0 comment '附议数',
+    `oppose` int(11) NOT NULL DEFAULT 0 comment '反对数',
     `content` varchar(1000) CHARACTER SET utf8 comment '提案内容',
 PRIMARY KEY(`id`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
@@ -19,6 +19,7 @@ INSERT INTO `proposal` VALUES('01','改宪法','习近平','20180705','通过','
 INSERT INTO `proposal` VALUES('02','医疗改革1','市政府','20200311','审核中','74','26','将挂号费改为医事服务费');
 INSERT INTO `proposal` VALUES('03','教学改革1','大鸡腿','20190621','审核中','88','12','将所有政治课程从义务教育中删除');
 delete from proposal where id = 02;
+INSERT INTO `proposal` (proName,proWriter,content) VALUES('教学改革1','大鸡腿','将所有政治课程从义务教育中删除');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
 
