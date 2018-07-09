@@ -50,13 +50,11 @@
     <h1 th:inline="text">能力规范文稿管理系统</h1>
     <h2> 写者&emsp;&emsp;|&emsp;&emsp;管理</h2> <br/>
     <p style = "font-size: 30px">提案编制</p> <br/>
-        <form action = "#">
-            提案名称<input type = "text" > <br/> <br/>
-            提案内容<input type = "text"  placeholder = "在此输入提案内容"> <br/> <br/>
+    <form th:action = "@{/proposal/insert}" th:method="get">
+            提案名称<input type = "text" name = "proName"> <br/> <br/>
+            提案内容<input type = "text" name = "content" placeholder = "在此输入提案内容"> <br/> <br/>
             <label><input type="radio" name="#">我已阅读提案建议要求</label>
             <button class = "btn-info " type = "submit"> 提交 </button> &emsp;
-            <button class = "btn-info " type = "submit"> 保存 </button> &emsp;
-            <button class = "btn-info " type = "submit"> 打印 </button> <br/>
         </form>
         <form action = "#">
             <table width = "100%"  border="1" class = "dataintable">

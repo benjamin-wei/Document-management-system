@@ -35,6 +35,9 @@ public interface StudentDAO {
     @Insert(value = "INSERT INTO comment(comment.`id`,comment.`name`,comment.`content`) VALUES (#{id},#{name},#{content})")
     int insertCon(@Param("id") int id, @Param("name")String name, @Param("content")String content);
 
+    @Insert(value = "INSERT INTO `proposal` (proName,proWriter,content) VALUES(#{proName},#{proWriter},#{content})")
+    boolean insertPro(@Param("proName")String proName, @Param("proWriter")String proWriter,@Param("content")String content);
+
     @Select(value = "SELECT * FROM comment")
     List<Comment> getAllComment();
 

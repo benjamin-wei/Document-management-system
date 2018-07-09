@@ -32,6 +32,8 @@ public interface StudentService {
 
     boolean insertCon(int id, String name, String content);
 
+    boolean insertPro(String proName, String proWriter,String content);
+
     boolean insert(User user);
 
     boolean verify(User user);

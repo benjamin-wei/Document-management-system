@@ -76,6 +76,16 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public boolean insertPro(String proName, String proWriter,String content) {
+        if (null == proName || null == content || null == proWriter){
+            return false;
+        }
+        // do something...
+        studentDAO.insertPro(proName,proWriter,content);
+        return true;
+    }
+
+    @Override
     public boolean verify(User user) {
         User userreturn = studentDAO.verify(user);
         if (userreturn == null) {
