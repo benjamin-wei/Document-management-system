@@ -17,6 +17,7 @@ BEGIN;
 INSERT INTO `proposal` VALUES('01','改宪法','习近平','20180705','通过','100','0','删除不能连任的相关内容');
 /*测试用sql语句*/
 INSERT INTO `proposal` VALUES('02','医疗改革1','市政府','20200311','审核中','74','26','将挂号费改为医事服务费');
+INSERT INTO `proposal` VALUES('03','教学改革1','大鸡腿','20190621','审核中','88','12','将所有政治课程从义务教育中删除');
 delete from proposal where id = 02;
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;

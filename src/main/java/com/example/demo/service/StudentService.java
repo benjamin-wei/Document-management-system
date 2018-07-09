@@ -26,6 +26,8 @@ public interface StudentService {
 
     Proposal getProposal(int id);
 
+    List<Proposal> getProposalByName(String name);
+
     List<Comment> getComment(int id);
 
     boolean insertCon(int id, String name, String content);

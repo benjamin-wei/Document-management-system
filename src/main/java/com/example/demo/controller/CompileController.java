@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Proposal;
 import com.example.demo.entity.Student;
 import com.example.demo.entity.User;
 import com.example.demo.service.StudentService;
@@ -45,6 +46,8 @@ public class CompileController {
             return "Login";
         }
         request.setAttribute("user", user);
+        List<Proposal> list = studentService.getProposalByName(user.getName());
+        request.setAttribute("proposals", list);
         return "compile";
     }
 

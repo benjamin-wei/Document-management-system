@@ -50,6 +50,9 @@ public interface StudentDAO {
     @Select(value = "SELECT * FROM referrer WHERE `name` = #{name}")
     Referrer getReferrer(String name);
 
+    @Select(value = "SELECT * FROM proposal WHERE `proWriter` = #{name}")
+    List<Proposal> getProposalByName(String name);
+
     @Select(value = "SELECT * FROM proposal")
     List<Proposal> getAllProposal();
 
