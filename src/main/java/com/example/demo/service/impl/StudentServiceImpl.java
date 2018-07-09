@@ -25,6 +25,8 @@ public class StudentServiceImpl implements StudentService {
         return studentDAO.getAllStudent();
     }
 
+    public List<Referrer> getAllReferrer() {return studentDAO.getAllReferrer();}
+
     public List<User> getAllUser() {return studentDAO.getAllUser();}
 
     public List<Proposal> getAllProposal() {return studentDAO.getAllProposal();}

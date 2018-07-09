@@ -19,6 +19,9 @@ public interface StudentDAO {
     @Select(value = "SELECT * FROM student")
     List<Student> getAllStudent();
 
+    @Select(value = "SELECT * FROM referrer")
+    List<Referrer> getAllReferrer();
+
     @Select(value = "SELECT * FROM user")
     List<User> getAllUser();
 

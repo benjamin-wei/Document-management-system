@@ -76,3 +76,4 @@ PRIMARY KEY(`name`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 
 INSERT INTO `referrer` VALUES ('一位长者','BJUT','13030066666','主任医师','医生','BigBrother@gmail.com','长得好看');
+INSERT INTO `referrer` VALUES ('蜂花护发素','BJUT','13030097560','架构师','工程师','heiehi@gmail.com','代码水平一流，学东西快，特聪明');

@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Proposal;
+import com.example.demo.entity.Referrer;
 import com.example.demo.entity.Student;
 import com.example.demo.entity.User;
 import com.example.demo.service.StudentService;
@@ -45,6 +47,15 @@ public class MaintainController {
             return "Login";
         }
         request.setAttribute("user", user);
+        List<Referrer> list = studentService.getAllReferrer();
+        if (list == null) {
+            System.out.println("list is null");
+        } else if (list.get(0) == null) {
+            System.out.println("list(0) is null");
+        } else {
+            System.out.println(list.get(0).getCompany());
+        }
+        request.setAttribute("referrers",list);
         return "maintain";
     }
 

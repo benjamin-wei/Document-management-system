@@ -14,6 +14,8 @@ public interface StudentService {
 
     List<Student> getAllStudent();
 
+    List<Referrer> getAllReferrer();
+
     List<Comment> getAllComment();
 
     List<User> getAllUser();
