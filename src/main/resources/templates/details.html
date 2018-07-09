@@ -38,25 +38,25 @@
                 <th>截止日期</th>
             </tr>
             <tr>
-                <td th:text="${id}"></td>
-                <td th:text="${name}"></td>
-                <td th:text="${writer}"></td>
-                <td th:text="${deadline}"></td>
+                <td th:text="${proposal.getId()}"></td>
+                <td th:text="${proposal.getProName()}"></td>
+                <td th:text="${proposal.getProWriter()}"></td>
+                <td th:text="${proposal.getDeadline()}"></td>
             </tr>
         </table> <br/>
     <table width = "100%" border="1">
         <tr>
             <th style = "font-size: 30px">提案内容</th>
-            <th th:text="${content}"></th>
+            <th th:text="${proposal.getContent()}"></th>
         </tr>
     </table>
     <br/> <br/>
         <form th:action = "@{/comment/insert}" th:method="get">
-             我要评论：<input type = "text" name = "comment"> <br/> <br/>
+             我要评论：<input type = "text" name = "content"> <br/> <br/>
             <label><input type="radio" name="#"> 附议</label>
             <label><input type = "radio" name = "#"> 反对</label>
             <button class = "btn-info " type = "submit"> 提交 </button>
-
+        </form>
         <h3>评论区</h3>
         <table width = "100%" border="1" class = "dataintable">
             <tr>
@@ -66,12 +66,10 @@
             </tr>
             <tr th:each="c,iterStat : ${comments}" th:class="${iterStat.odd}? 'odd'">
                 <td th:text="${c.getName()}"></td>
-                <td th:text="${c.getComment()}"></td>
+                <td th:text="${c.getContent()}"></td>
                 <td th:text="${c.getTime()}"></td>
             </tr>
-        </table>
-        </form>
-            <br/>
+        </table> <br/>
         <button type = "#"> <a href = "http://localhost:8080/query" >返回</a> </button>
 </div>
 </body>

@@ -26,7 +26,7 @@ public interface StudentService {
 
     List<Comment> getComment(int id);
 
-    boolean insertCon(int id, String content);
+    boolean insertCon(int id, String name, String content);
 
     boolean insert(User user);
 

@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import com.example.demo.entity.*;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -28,8 +29,8 @@ public interface StudentDAO {
             "VALUE(#{userName},#{passWord},#{name},#{gender},#{birthday},#{address},#{conWay},#{referrer},#{assoName},#{isAdmin})")
     int insert(User user);
 
-    @Insert(value = "INSERT INTO comment(comment.`id`,comment.`name`,comment.`comment`) VALUES (#{iddd},'一位长者',#{content})")
-    int insertCon(int iddd, String content);
+    @Insert(value = "INSERT INTO comment(comment.`id`,comment.`name`,comment.`content`) VALUES (#{id},#{name},#{content})")
+    int insertCon(@Param("id") int id, @Param("name")String name, @Param("content")String content);
 
     @Select(value = "SELECT * FROM comment")
     List<Comment> getAllComment();

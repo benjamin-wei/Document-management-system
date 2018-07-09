@@ -32,7 +32,7 @@
     <h2 class = "text-center"> 入会申请</h2>
         <form th:action = "@{/user/insert}" th:method="get" th:object="${user}">
             用户名 <input type = "text" th:field="*{userName}" placeholder = "必填" required> <br/> <br/>
-            密码 <input type = "text" th:field="*{passWord}" placeholder = "必填" required> <br/> <br/>
+            密码 <input type = "password" th:field="*{passWord}" placeholder = "必填" required> <br/> <br/>
             姓名 <input type = "text" th:field="*{name}" placeholder = "必填" required> <br/> <br/>
             性别 <input type = "text" th:field="*{gender}" placeholder = "必填" required> <br/> <br/>
             出生日期 <input type = "text" th:field="*{birthday}" placeholder = "必填,六位数字" required> <br/> <br/>

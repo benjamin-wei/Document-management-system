@@ -1,48 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : LocalHost
- Source Server Type    : MySQL
- Source Server Version : 50621
- Source Host           : localhost
- Source Database       : test
-
- Target Server Type    : MySQL
- Target Server Version : 50621
- File Encoding         : utf-8
-
- Date: 07/01/2018 21:28:02 PM
-*/
-
-SET NAMES utf8;
-SET FOREIGN_KEY_CHECKS = 0;
-
--- ----------------------------
---  Table structure for `User`
--- ----------------------------
-DROP TABLE IF EXISTS `User`;
-CREATE TABLE `User` (
-  `name` varchar(100) CHARACTER SET utf8 DEFAULT 'Tom' COMMENT '姓名',
-  `sex` varchar(100) CHARACTER SET utf8 DEFAULT '男' COMMENT '性别',
-  `birth` INT(11) DEFAULT '00000000' COMMENT '生日',
-  `homeAddress` varchar(100) CHARACTER SET utf8 DEFAULT 'Beijing' COMMENT '家庭住址',
-  `telephone` INT(11) DEFAULT '00000000000' COMMENT '联系方式',
-  `recommender` varchar(100) CHARACTER SET utf8 DEFAULT 'Tom' COMMENT '推荐人',
-   `industryClub`varchar(100) CHARACTER SET utf8 DEFAULT 'ccc' COMMENT '行业分会',
-  `specialCommittee`varchar(100) CHARACTER SET utf8 DEFAULT 'ddd' COMMENT '专委会',
-  PRIMARY KEY (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
--- ----------------------------
---  Records of `User`
--- ----------------------------
-BEGIN;
-INSERT INTO `User` VALUES ('张三', '男','19980314','北京','1236382946','aa','b11','c11'), ('李四', '男','19980711','北京','1278201262','bb','d11','c51');
-COMMIT;
-SET FOREIGN_KEY_CHECKS = 1;
-
--- ----------------------------
---  Table structure for `Writer`
--- ----------------------------
 /* 提案*/
 DROP TABLE IF EXISTS `proposal`;
 CREATE TABLE `proposal`(
@@ -56,9 +11,8 @@ CREATE TABLE `proposal`(
     `content` varchar(1000) CHARACTER SET utf8 comment '提案内容',
 PRIMARY KEY(`id`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
--- ----------------------------
---  Records of `Writer`
--- ----------------------------
+
+
 BEGIN;
 INSERT INTO `proposal` VALUES('01','改宪法','习近平','20180705','通过','100','0','删除不能连任的相关内容');
 /*测试用sql语句*/
@@ -100,13 +54,13 @@ DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment`(
     `id`int(11) COMMENT'对应提案的id',
     `name`varchar(100)CHARACTER SET utf8 COMMENT'评论人',
-    `comment` varchar(1000) CHARACTER SET utf8 COMMENT'评论内容',
+    `content` varchar(1000) CHARACTER SET utf8 COMMENT'评论内容',
     `time` TIMESTAMP NOT NULL default CURRENT_TIMESTAMP COMMENT'评论时间,格式为YYYY-MM-DD HH:MM:SS',
-PRIMARY KEY(`comment`)
+PRIMARY KEY(`content`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 /*自动补上系统时间的写法*/
-INSERT INTO `comment` (id,name,comment) VALUES ('1','一位长者','轻关易道，通商宽衣');
-INSERT INTO `comment` VALUES ('1','一位长者','轻关易道，通商宽衣','2017-06-06 11:45:03');
+INSERT INTO `comment` (id,name,content) VALUES ('1','一位长者','轻关易道，通商宽衣');
+-- INSERT INTO `comment` VALUES ('1','一位长者','轻关易道，通商宽衣','2017-06-06 11:45:03');
 
 /*推荐人表*/
 DROP TABLE IF EXISTS `reffer`;

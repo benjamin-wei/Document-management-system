@@ -62,12 +62,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public boolean insertCon(int id, String content) {
-        if (null == content || id == 0){
+    public boolean insertCon(int id, String name, String content) {
+        if (null == name || null == content || id == 0){
             return false;
         }
         // do something...
-        studentDAO.insertCon(id, content);
+        studentDAO.insertCon(id, name, content);
         return true;
     }
 

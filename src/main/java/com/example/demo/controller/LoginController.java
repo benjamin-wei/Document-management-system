@@ -29,9 +29,12 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login/verify",method = RequestMethod.GET)
-    public String verify(@ModelAttribute("user") User user, Model model){
+    public String verify(@ModelAttribute("user") User user, HttpServletRequest request, Model model){
         Boolean isUser = studentService.verify(user);
+        User user2 = studentService.getUser(user.getUserName());
+        System.out.println(user.getUserName());
         if (isUser.equals(true)) {
+            request.getSession().setAttribute("usersession",user2);
             return "redirect:/query";
         }
         model.addAttribute("message", "用户名或密码错误，请重试！");

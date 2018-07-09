@@ -32,13 +32,13 @@
     <form th:action = "@{/login/verify}" th:method="get" th:object="${user}">
         <p style="color: red" th:text="${message}"></p> <br/>
         用户名 <input type = "text" th:field="*{userName}" placeholder = "必填" required> <br/> <br/>
-        密码 <input type = "text" th:field="*{passWord}" placeholder = "必填" required> <br/> <br/>
+        密码 <input type = "password" th:field="*{passWord}" placeholder = "必填" required> <br/> <br/>
         <button btn-primary type = "submit">登陆</button>
     </form>
     <p>还没有账号？<a href = "http://localhost:8080/signup" >点此</a>注册</p> <br/>
     <h2>规范列表</h2> <br/>
-        <p style = "color: blue">关于草案评审的工作规范………………………………………………2017/06/01</p>
-        <p>管理系统申请自个规范……………………………………………………2017/05/30</p>
+    <p style = "color: blue">关于草案评审的工作规范………………………………………………2017/06/01</p>
+    <p>管理系统申请自个规范……………………………………………………2017/05/30</p>
 </div>
 </body>
 </html>

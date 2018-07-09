@@ -7,10 +7,6 @@ public class Comment {
         return name;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
     public Time getTime() {
         return time;
     }
@@ -19,15 +15,29 @@ public class Comment {
         this.name = name;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
     public void setTime(Time time) {
         this.time = time;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private  int id;
     private String name;
-    private  String comment;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    private  String content;
     private Time time;
 }
