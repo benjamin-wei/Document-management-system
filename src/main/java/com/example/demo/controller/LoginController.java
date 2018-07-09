@@ -23,7 +23,9 @@ public class LoginController {
     private StudentService studentService;
 
     @RequestMapping(value = "/Login",method = RequestMethod.GET)
-    public String login(Model model){
+    public String login(HttpServletRequest request,Model model){
+        request.getSession().removeAttribute("user");//清空session信息
+        request.getSession().invalidate();//清除 session 中的所有信息
         model.addAttribute("user",new User());
         return "Login";
     }
