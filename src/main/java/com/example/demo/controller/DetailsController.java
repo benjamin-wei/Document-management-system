@@ -42,6 +42,11 @@ public class DetailsController {
 
     @RequestMapping(value = "/details", method = RequestMethod.GET)
     public String query(@Param("id") @ModelAttribute("id")  int id, HttpServletRequest request, Model model) {
+        User user = (User)getSession().getAttribute("usersession");
+        if (user == null) {
+            return "Login";
+        }
+        request.setAttribute("user", user);
 //        List<Comment> list = studentService.getAllComment();
 //        request.setAttribute("comments",list);
 //        if (id == 0) {
@@ -72,9 +77,14 @@ public class DetailsController {
 
     @RequestMapping(value = "/comment/insert",method = RequestMethod.GET)
     public String insert(@ModelAttribute("comment")  Comment comment, HttpServletRequest request, Model model){
+        User user = (User)getSession().getAttribute("usersession");
+        if (user == null) {
+            return "Login";
+        }
+        request.setAttribute("user", user);
 //        int id = request.getParameter("id");
 //        String content = request.getParameter("content");
-        User user = (User)getSession().getAttribute("usersession");
+//        User user = (User)getSession().getAttribute("usersession");
         Proposal proposal = (Proposal) getSession().getAttribute("proposalsession");
         int id =proposal.getId();
         String content = comment.getContent();
