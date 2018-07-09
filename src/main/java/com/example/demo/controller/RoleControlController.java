@@ -46,7 +46,7 @@ public class RoleControlController {
         if (user == null ) {
             return "redirect:/Login";
         }
-        if (user.getIsAdmin() == 0) {
+        if (user.getIsAdmin() == 1) {
             return "redirect:/query";
         }
         request.setAttribute("user", user);

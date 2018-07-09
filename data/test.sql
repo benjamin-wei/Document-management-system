@@ -36,19 +36,20 @@ CREATE TABLE `user`(
    `conWay`varchar(100)CHARACTER SET utf8 COMMENT'联系方式',
    `referrer`varchar(100)CHARACTER SET utf8 COMMENT'推荐人',
    `assoName`varchar(100)CHARACTER SET utf8 COMMENT'会名',
-    `isAdmin` int(1) DEFAULT '-1' COMMENT'是否管理员，1为管理员，0为写者,-1为审核未通过',
+    `isAdmin` int(10) NOT NULL DEFAULT 0 COMMENT'是否管理员，0为审核未通过，1为写者，2为管理员',
 PRIMARY KEY(`userName`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 -- ----------------------------
 --  Records of `Writer`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','一位长者','行业分会','1');
-/*测试用sql语句*/
-INSERT INTO `user` VALUES('admin2','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','蜂花护发素','专委会','0');
+INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','一位长者','行业分会','2');
+INSERT INTO `user` VALUES('admin2','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','蜂花护发素','专委会','1');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
-delete from user where userName = admin2;
+/*测试用sql语句*/
+select * from user;
+delete from user where userName = 'writer1';
 
 /*评论表*/
 

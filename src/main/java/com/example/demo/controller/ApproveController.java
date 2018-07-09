@@ -45,7 +45,7 @@ public class ApproveController {
         if (user == null) {
             return "redirect:/Login";
         }
-        if (user.getIsAdmin() == 0 || !user.getAssoName().equals("专委会")) {
+        if (user.getIsAdmin() == 1 || !user.getAssoName().equals("专委会")) {
             return "redirect:/query";
         }
         request.setAttribute("user", user);

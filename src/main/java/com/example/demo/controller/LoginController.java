@@ -34,8 +34,8 @@ public class LoginController {
     public String verify(@ModelAttribute("user") User user, HttpServletRequest request, Model model){
         Boolean isUser = studentService.verify(user);
         User user2 = studentService.getUser(user.getUserName());
-        System.out.println(user.getUserName());
-        if (isUser.equals(true)) {
+//        System.out.println(user.getUserName());  测试代码
+        if (isUser.equals(true) && user2.getIsAdmin() != 0) {
             request.getSession().setAttribute("usersession",user2);
             return "redirect:/query";
         }

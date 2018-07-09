@@ -48,13 +48,13 @@ public class MaintainController {
         }
         request.setAttribute("user", user);
         List<Referrer> list = studentService.getAllReferrer();
-        if (list == null) {
-            System.out.println("list is null");
-        } else if (list.get(0) == null) {
-            System.out.println("list(0) is null");
-        } else {
-            System.out.println(list.get(0).getCompany());
-        }
+//        if (list == null) {
+//            System.out.println("list is null");
+//        } else if (list.get(0) == null) {          测试代码
+//            System.out.println("list(0) is null");
+//        } else {
+//            System.out.println(list.get(0).getCompany());
+//        }
         request.setAttribute("referrers",list);
         return "maintain";
     }
