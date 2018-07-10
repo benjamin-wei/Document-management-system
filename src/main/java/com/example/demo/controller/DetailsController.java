@@ -44,6 +44,8 @@ public class DetailsController {
     public String query(@Param("id") @ModelAttribute("id")  int id, HttpServletRequest request, Model model) {
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
             return "Login";
         }
         request.setAttribute("user", user);
@@ -79,7 +81,9 @@ public class DetailsController {
     public String insert(@ModelAttribute("comment")  Comment comment, HttpServletRequest request, Model model){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "redirect:/Login";
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
+            return "Login";
         }
         request.setAttribute("user", user);
 //        int id = request.getParameter("id");

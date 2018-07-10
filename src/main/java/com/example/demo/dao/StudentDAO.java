@@ -1,10 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.*;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -37,6 +34,12 @@ public interface StudentDAO {
 
     @Insert(value = "INSERT INTO `proposal` (proName,proWriter,content) VALUES(#{proName},#{proWriter},#{content})")
     boolean insertPro(@Param("proName")String proName, @Param("proWriter")String proWriter,@Param("content")String content);
+
+    @Update(value = "UPDATE user SET user.isAdmin = 1 WHERE user.userName = #{userName}")
+    boolean userAgree(User user);
+
+    @Delete(value = "delete from user where user.userName = #{userName}")
+    boolean userReject(User user);
 
     @Select(value = "SELECT * FROM comment")
     List<Comment> getAllComment();

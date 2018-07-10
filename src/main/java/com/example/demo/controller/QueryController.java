@@ -41,24 +41,17 @@ public class QueryController {
     private StudentService studentService;
 
     @RequestMapping(value = "/query",method = RequestMethod.GET)
-    public String query(HttpServletRequest request){
+    public String query(HttpServletRequest request, Model model){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "redirect:/Login";
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
+            return "Login";
         }
         request.setAttribute("user", user);
         List<Proposal> list = studentService.getAllProposal();
         request.setAttribute("proposals",list);
         return "query";
     }
-
-    @RequestMapping(value = "/user/insert",method = RequestMethod.GET)
-    public String insert(@ModelAttribute("user") User user, Model model){
-        model.addAttribute("message", "注册成功！请耐心等待审核");
-        studentService.insert(user);
-        return "Login";
-    }
-
-
 
 }

@@ -70,7 +70,7 @@
                     </tr>
                     <tr>
                         <th>推荐人</th>
-                        <td th:text="${referrer}"></td>
+                        <td th:text="${referrer.getName()}"></td>
                     </tr>
                     <tr>
                         <th>申请会名</th>
@@ -125,8 +125,8 @@
         </div>
         <div style = "text-align:right;">
             <br>
-            <input type = "button" class="btn btn-default"value = "同意" />
-            <input type = "button" class="btn btn-default"value = "拒绝" />
+            <a th:href="@{/user/agree(username=${username})}">同意</a>
+            <a th:href="@{/user/reject(username=${username})}">拒绝</a>
         </div>
 
     </form>

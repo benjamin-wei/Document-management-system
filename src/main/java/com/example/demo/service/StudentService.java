@@ -34,6 +34,10 @@ public interface StudentService {
 
     boolean insertPro(String proName, String proWriter,String content);
 
+    boolean userAgree(User user);
+
+    boolean userReject(User user);
+
     boolean insert(User user);
 
     boolean verify(User user);

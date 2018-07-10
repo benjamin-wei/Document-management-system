@@ -43,9 +43,11 @@ public class CompileController {
     private StudentService studentService;
 
     @RequestMapping(value = "/compile",method = RequestMethod.GET)
-    public String login(HttpServletRequest request){
+    public String login(HttpServletRequest request, Model model){
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
             return "Login";
         }
         request.setAttribute("user", user);
@@ -58,7 +60,9 @@ public class CompileController {
     public String insert(@ModelAttribute("proposal") Proposal proposal, HttpServletRequest request, Model model) {
         User user = (User)getSession().getAttribute("usersession");
         if (user == null) {
-            return "redirect:/Login";
+            model.addAttribute("message", "登陆已过期，请重新登陆");
+            model.addAttribute("user",new User());
+            return "Login";
         }
         request.setAttribute("user", user);
         String proName = proposal.getProName();
