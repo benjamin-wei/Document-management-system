@@ -107,13 +107,18 @@ public class CheckApplyController {
         request.setAttribute("user", user);
         User user2 = studentService.getUser(username);
         studentService.userReject(user2);
+//
+//        for(int i <[index.length i++)
+//            int id = index[i];
+//        caseService.setStateById(id);
+
         Referrer referrer = studentService.getReferrer(user.getReferrer());
         request.setAttribute("name", user.getName());  /*传user属性给页面*/
         request.setAttribute("gender", user.getGender());
         request.setAttribute("birthday", user.getBirthday());
         request.setAttribute("address", user.getAddress());
         request.setAttribute("conWay", user.getConWay());
-        request.setAttribute("referrer", user.getReferrer());
+        request.setAttribute("nobodyreferrer", user.getReferrer());
         request.setAttribute("assoName", user.getAssoName());
         request.setAttribute("referrer", referrer); /*传referrer属性给页面*/
         List<User> userlist = studentService.getAllUser();

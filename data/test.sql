@@ -20,15 +20,15 @@ INSERT INTO `proposal` VALUES('03','教学改革1','大鸡腿','20190621','审�
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
 /*测试用sql语句*/
-delete from proposal where id = 02;
-INSERT INTO `proposal` (proName,proWriter,content) VALUES('教学改革1','大鸡腿','将所有政治课程从义务教育中删除');
+-- delete from proposal where id = 02;
+-- INSERT INTO `proposal` (proName,proWriter,content) VALUES('教学改革1','大鸡腿','将所有政治课程从义务教育中删除');
 
 /*用户表*/
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`(
     `userName`varchar(100)CHARACTER SET utf8 COMMENT'用户名',
-    `passWord`varchar(100)CHARACTER SET utf8 COMMENT'密码',
+    `passWord`varchar(256)CHARACTER SET utf8 COMMENT'密码',
     `name`varchar(100)CHARACTER SET utf8 COMMENT'姓名',
     `gender`varchar(100)CHARACTER SET utf8 COMMENT'性别',
    `birthday`int(11) COMMENT'出生日期',
@@ -43,14 +43,15 @@ PRIMARY KEY(`userName`)
 --  Records of `Writer`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES('admin1','1045','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','一位长者','行业分会','2');
-INSERT INTO `user` VALUES('writer1','1045','luffy','男','19970601','小渔村','电话虫:cjgdkv838','蜂花护发素','专委会','1');
-INSERT INTO `user` VALUES('nobody1','1045','rose','女','19900721','海边','海螺','蜂花护发素','研究会','0');
+-- admin1/nobody1密码为1045，writer1密码为7646
+INSERT INTO `user` VALUES('admin1','1000:8dd5956fad34c96a06bce20ebfb9444b9f726a2ede99b766:d2fa7a218c8fa16d2814ab70dc76c78ec4021bb651bd2b94','大鸡腿','男','20110808','火焰山','wechat:cjgdkv838','一位长者','行业分会','2');
+INSERT INTO `user` VALUES('writer1','1000:209f6fc86621471c2bb9025ec84decc7de07a80a88647f58:92f3b371faec910b88ad51212ff9ef46dd5099ce3213d2cb','luffy','男','19970601','小渔村','电话虫:cjgdkv838','蜂花护发素','专委会','1');
+INSERT INTO `user` VALUES('nobody1','1000:8dd5956fad34c96a06bce20ebfb9444b9f726a2ede99b766:d2fa7a218c8fa16d2814ab70dc76c78ec4021bb651bd2b94','rose','女','19900721','海边','海螺','蜂花护发素','研究会','0');
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;
 /*测试用sql语句*/
-select * from user;
-delete from user where userName = 'nobody1';
+-- select * from user;
+-- delete from user where userName = 'nobody1';
 
 /*评论表*/
 
@@ -79,5 +80,5 @@ CREATE TABLE `referrer`(
 PRIMARY KEY(`name`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 
-INSERT INTO `referrer` VALUES ('一位长者','BJUT','13030066666','主任医师','医生','BigBrother@gmail.com','长得好看');
-INSERT INTO `referrer` VALUES ('蜂花护发素','BJUT','13030097560','架构师','工程师','heiehi@gmail.com','代码水平一流，学东西快，特聪明');
+-- INSERT INTO `referrer` VALUES ('一位长者','BJUT','13030066666','主任医师','医生','BigBrother@gmail.com','长得好看');
+-- INSERT INTO `referrer` VALUES ('蜂花护发素','BJUT','13030097560','架构师','工程师','heiehi@gmail.com','代码水平一流，学东西快，特聪明');

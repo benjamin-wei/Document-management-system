@@ -1,11 +1,14 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.controller.PasswordHash;
 import com.example.demo.dao.StudentDAO;
 import com.example.demo.entity.*;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.List;
 
 /**
@@ -109,8 +112,14 @@ public class StudentServiceImpl implements StudentService {
         if (userreturn == null) {
             return false;
         }
-        if (userreturn.getPassWord().equals(user.getPassWord())){
-            return true;
+        try {
+            if (PasswordHash.validatePassword(user.getPassWord(), userreturn.getPassWord())){
+                return true;
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
         }
         return false;
     }

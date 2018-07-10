@@ -54,19 +54,4 @@ public class QueryController {
         return "query";
     }
 
-    @RequestMapping(value = "/user/insert",method = RequestMethod.GET)
-    public String insert(@ModelAttribute("user") User user, Model model){
-        User user2 = (User)getSession().getAttribute("usersession");
-        if (user == null) {
-            model.addAttribute("message", "登陆已过期，请重新登陆");
-            model.addAttribute("user",new User());
-            return "Login";
-        }
-        model.addAttribute("message", "注册成功！请耐心等待审核");
-        studentService.insert(user);
-        return "Login";
-    }
-
-
-
 }
