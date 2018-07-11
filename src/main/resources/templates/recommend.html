@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                     xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//fonts.gdgdocs.org/css?family=Lobster" rel="stylesheet" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript"
+
+            src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>final</title>
+
+    <style type="text/css">
+        span{padding-right:10px;width:6em;display:block;float:top;line-height:20px;}
+    </style>
+
+</head>
+<body style="background: white">
+<div class="container" style="max-width: 800px;margin-top: 140px">
+    <!--<form>-->
+
+        <!--<div class="form-group" >-->
+            <h1 class="bd-title" id="content"style=" text-align:center;">能力规范文稿管理系统</h1>
+            <div style="float:right; text-align:right"><button type = "#"> <a href = "http://localhost:8080/query" >返回</a> </button></div>
+            <br>
+        <!--</div>-->
+        <hr/>
+        <div class="container"style="text-align:center">
+            <table margin="auto" class="table table-bordered">
+                <tr>
+                    <th >写者</th>
+                    <th>管理者</th>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="panel panel-default">
+            <p> <div class="panel-heading">会员推荐表</div></p>
+            <!--<form class="panel-body">-->
+                <div class="bs-example" data-example-id="simple-table">
+                    <form th:action = "@{/referrer/insert}" th:method="get">
+                            <table class="table">
+                        <tr>
+                            <td>推荐人<input type="text" name="name" ></td>
+                            <td><span>职称</span><input type="text" name="jobTitle"></td>
+                        </tr>
+
+
+                        <tr>
+                            <td><span>单位</span><input type="text" name="company"></td>
+                            <td><span>职务</span><input type="text" name="position"></td>
+                        </tr>
+
+                        <tr>
+                            <td><span>电话</span><input type="text" name="phone"></td>
+                            <td><span>邮箱</span><input type="text" name="email"></td>
+                        </tr>
+
+                        <tr>
+                            <td><span>被推荐人</span><input type="text" name="nobody"></td>
+                        </tr>
+
+                        <tr>
+                            <td><span>推荐原因</span><input type="text" name="reason" style="width:400px;height:80px"></td>
+                        </tr>
+                            </table>
+                            <!--<div style = "text-align:right">-->
+                                <button class = "btn-info " type = "submit"> 提交 </button>
+                            <!--</div>-->
+                    </form></div>
+            <!--</form>-->
+        <!--</div></form>-->
+            </div>
+    <!--</form> </div>-->
+
+
+
+    <!--</form>-->
+</div>
+</body>
+</html>

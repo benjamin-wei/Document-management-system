@@ -68,17 +68,18 @@ INSERT INTO `comment` (id,name,content) VALUES ('1','一位长者','轻关易道
 -- INSERT INTO `comment` VALUES ('1','一位长者','轻关易道，通商宽衣','2017-06-06 11:45:03');
 
 /*推荐人表*/
-DROP TABLE IF EXISTS `reffer`;
+DROP TABLE IF EXISTS `referrer`;
 CREATE TABLE `referrer`(
     `name`varchar(100)CHARACTER SET utf8 COMMENT'推荐人姓名',
-    `company`varchar(100)CHARACTER SET utf8 COMMENT'单位',
-    `phone`varchar(100)CHARACTER SET utf8 COMMENT'电话',
     `jobTitle` varchar(1000) CHARACTER SET utf8 COMMENT'职称',
+    `company`varchar(100)CHARACTER SET utf8 COMMENT'单位',
     `position`varchar(100)CHARACTER SET utf8 COMMENT'职务',
+    `phone`varchar(100)CHARACTER SET utf8 COMMENT'电话',
     `email`varchar(100)CHARACTER SET utf8 COMMENT'邮箱',
+    `nobody`varchar(100)CHARACTER SET utf8 COMMENT'被推荐人',
     `reason`varchar(100)CHARACTER SET utf8 COMMENT'推荐原因',
-PRIMARY KEY(`name`)
+PRIMARY KEY(`name`,`nobody`)
 )ENGINE InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='能力规范文稿管理系统';
 
--- INSERT INTO `referrer` VALUES ('一位长者','BJUT','13030066666','主任医师','医生','BigBrother@gmail.com','长得好看');
--- INSERT INTO `referrer` VALUES ('蜂花护发素','BJUT','13030097560','架构师','工程师','heiehi@gmail.com','代码水平一流，学东西快，特聪明');
+-- INSERT INTO `referrer` VALUES ('一位长者','主任医师','BJUT','医生','13030066666','BigBrother@gmail.com','大鸡腿','长得好看');
+-- INSERT INTO `referrer` VALUES ('蜂花护发素','架构师','BJUT','工程师','13030097560','heiehi@gmail.com','rose','代码水平一流，学东西快，特聪明');

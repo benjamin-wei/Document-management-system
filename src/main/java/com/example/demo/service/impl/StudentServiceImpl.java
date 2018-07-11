@@ -23,11 +23,6 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentDAO studentDAO;
 
-    @Override
-    public List<Student> getAllStudent() {
-        return studentDAO.getAllStudent();
-    }
-
     public List<Proposal> getProposalByName(String name) {return studentDAO.getProposalByName(name);}
 
     public List<Referrer> getAllReferrer() {return studentDAO.getAllReferrer();}
@@ -103,6 +98,16 @@ public class StudentServiceImpl implements StudentService {
         }
         // do something...
         studentDAO.insertPro(proName,proWriter,content);
+        return true;
+    }
+
+    @Override
+    public boolean insertRef(Referrer referrer) {
+        if (null == referrer){
+            return false;
+        }
+        // do something...
+        studentDAO.insertRef(referrer);
         return true;
     }
 

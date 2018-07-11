@@ -13,9 +13,6 @@ import java.util.List;
 @Mapper
 public interface StudentDAO {
 
-    @Select(value = "SELECT * FROM student")
-    List<Student> getAllStudent();
-
     @Select(value = "SELECT * FROM referrer")
     List<Referrer> getAllReferrer();
 
@@ -31,6 +28,9 @@ public interface StudentDAO {
 
     @Insert(value = "INSERT INTO comment(comment.`id`,comment.`name`,comment.`content`) VALUES (#{id},#{name},#{content})")
     int insertCon(@Param("id") int id, @Param("name")String name, @Param("content")String content);
+
+    @Insert(value = "INSERT INTO referrer (name,jobTitle,company,position,phone,email,nobody,reason) VALUES (#{name},#{jobTitle},#{company},#{position},#{phone},#{email},#{nobody},#{reason})")
+    int insertRef(Referrer referrer);
 
     @Insert(value = "INSERT INTO `proposal` (proName,proWriter,content) VALUES(#{proName},#{proWriter},#{content})")
     boolean insertPro(@Param("proName")String proName, @Param("proWriter")String proWriter,@Param("content")String content);

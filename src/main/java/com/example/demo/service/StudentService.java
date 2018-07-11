@@ -12,8 +12,6 @@ import java.util.List;
 
 public interface StudentService {
 
-    List<Student> getAllStudent();
-
     List<Referrer> getAllReferrer();
 
     List<Comment> getAllComment();
@@ -31,6 +29,8 @@ public interface StudentService {
     List<Comment> getComment(int id);
 
     boolean insertCon(int id, String name, String content);
+
+    boolean insertRef(Referrer referrer);
 
     boolean insertPro(String proName, String proWriter,String content);
 
