@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/Login",method = RequestMethod.GET)
     public String login(HttpServletRequest request,Model model){
@@ -31,8 +31,8 @@ public class LoginController {
 
     @RequestMapping(value = "/login/verify",method = RequestMethod.GET)
     public String verify(@ModelAttribute("user") User user, HttpServletRequest request, Model model){
-        Boolean isUser = studentService.verify(user);
-        User user2 = studentService.getUser(user.getUserName());
+        Boolean isUser = service.verify(user);
+        User user2 = service.getUser(user.getUserName());
 //        System.out.println(user.getUserName());  测试代码
         if (isUser.equals(true) && user2.getIsAdmin() != 0) {
             request.getSession().setAttribute("usersession",user2);

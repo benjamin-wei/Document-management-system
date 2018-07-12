@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 public class CheckApplyController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/checkApply", method = RequestMethod.GET)
     public String checkApply(@ModelAttribute("username") String username, HttpServletRequest request, Model model) {
@@ -30,8 +30,8 @@ public class CheckApplyController {
             return "Login";
         }
         request.setAttribute("user", user);
-        User user2 = studentService.getUser(username);
-        Referrer referrer = studentService.getReferrer(user.getReferrer());
+        User user2 = service.getUser(username);
+        Referrer referrer = service.getReferrer(user.getReferrer());
         request.setAttribute("name", user2.getName());  /*传user属性给页面*/
         request.setAttribute("username", user2.getUserName());
         request.setAttribute("gender", user2.getGender());
@@ -54,9 +54,9 @@ public class CheckApplyController {
             return "Login";
         }
         request.setAttribute("user", user);
-        User user2 = studentService.getUser(username);
-        studentService.userAgree(user2);
-        request.setAttribute("users",RoleControlController.nobody(studentService));
+        User user2 = service.getUser(username);
+        service.userAgree(user2);
+        request.setAttribute("users",RoleControlController.nobody(service));
         return "roleControl";
     }
 
@@ -69,9 +69,9 @@ public class CheckApplyController {
             return "Login";
         }
         request.setAttribute("user", user);
-        User user2 = studentService.getUser(username);
-        studentService.userReject(user2);
-        request.setAttribute("users",RoleControlController.nobody(studentService));
+        User user2 = service.getUser(username);
+        service.userReject(user2);
+        request.setAttribute("users",RoleControlController.nobody(service));
         return "roleControl";
     }
 

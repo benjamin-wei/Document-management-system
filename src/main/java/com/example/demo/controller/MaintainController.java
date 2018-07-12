@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Referrer;
 import com.example.demo.entity.User;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +20,7 @@ import java.util.List;
 public class MaintainController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/maintain",method = RequestMethod.GET)
     public String login(HttpServletRequest request, Model model){
@@ -31,7 +31,7 @@ public class MaintainController {
             return "Login";
         }
         request.setAttribute("user", user);
-        List<Referrer> list = studentService.getAllReferrer();
+        List<Referrer> list = service.getAllReferrer();
 //        if (list == null) {
 //            System.out.println("list is null");
 //        } else if (list.get(0) == null) {          测试代码

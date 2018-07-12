@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Proposal;
 import com.example.demo.entity.User;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +20,7 @@ import java.util.List;
 public class Approve2Controller {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/approve2",method = RequestMethod.GET)
     public String approve(HttpServletRequest request, Model model){
@@ -32,7 +32,7 @@ public class Approve2Controller {
         }
         if (user.getIsAdmin() == 1) {
             request.setAttribute("user", user);
-            List<Proposal> list = studentService.getAllProposal();
+            List<Proposal> list = service.getAllProposal();
             request.setAttribute("proposals",list);
             model.addAttribute("message", "您不是管理员，无法使用高级功能");
             return "query";
@@ -40,12 +40,12 @@ public class Approve2Controller {
         if (!user.getAssoName().equals("行业分会")) {
             model.addAttribute("message", "您不是行业分会会员，无法使用该功能");
             request.setAttribute("user", user);
-            List<Proposal> list = studentService.getAllProposal();
+            List<Proposal> list = service.getAllProposal();
             request.setAttribute("proposals",list);
             return "query";
         }
         request.setAttribute("user", user);
-        List<Proposal> list = studentService.getAllProposal();
+        List<Proposal> list = service.getAllProposal();
         request.setAttribute("proposals",list);
         return "approve2";
     }

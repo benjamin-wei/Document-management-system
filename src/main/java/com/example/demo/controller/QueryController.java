@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,7 +36,7 @@ public class QueryController {
     }
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/query",method = RequestMethod.GET)
     public String query(HttpServletRequest request, Model model){
@@ -47,7 +47,7 @@ public class QueryController {
             return "Login";
         }
         request.setAttribute("user", user);
-        List<Proposal> list = studentService.getAllProposal();
+        List<Proposal> list = service.getAllProposal();
         request.setAttribute("proposals",list);
         return "query";
     }

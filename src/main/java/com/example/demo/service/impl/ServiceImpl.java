@@ -1,11 +1,10 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.controller.PasswordHash;
-import com.example.demo.dao.StudentDAO;
+import com.example.demo.dao.DAO;
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -17,40 +16,40 @@ import java.util.List;
 * @create 2018-07-01 
 **/
 
-@Service
-public class StudentServiceImpl implements StudentService {
+@org.springframework.stereotype.Service
+public class ServiceImpl implements Service {
 
     @Autowired
-    private StudentDAO studentDAO;
+    private DAO DAO;
 
-    public List<Proposal> getProposalByName(String name) {return studentDAO.getProposalByName(name);}
+    public List<Proposal> getProposalByName(String name) {return DAO.getProposalByName(name);}
 
-    public List<Referrer> getAllReferrer() {return studentDAO.getAllReferrer();}
+    public List<Referrer> getAllReferrer() {return DAO.getAllReferrer();}
 
-    public List<User> getAllUser() {return studentDAO.getAllUser();}
+    public List<User> getAllUser() {return DAO.getAllUser();}
 
-    public List<Proposal> getAllProposal() {return studentDAO.getAllProposal();}
+    public List<Proposal> getAllProposal() {return DAO.getAllProposal();}
 
-    public List<Comment> getAllComment() {return studentDAO.getAllComment();}
+    public List<Comment> getAllComment() {return DAO.getAllComment();}
 
     @Override
     public Proposal getProposal(int id) {
-        return studentDAO.getProposal(id);
+        return DAO.getProposal(id);
     }
 
     @Override
     public User getUser(String username) {
-        return studentDAO.getUser(username);
+        return DAO.getUser(username);
     }
 
     @Override
     public Referrer getReferrer(String name) {
-        return studentDAO.getReferrer(name);
+        return DAO.getReferrer(name);
     }
 
     @Override
     public List<Comment> getComment(int id) {
-        return studentDAO.getComment(id);
+        return DAO.getComment(id);
     }
 
     @Override
@@ -59,7 +58,7 @@ public class StudentServiceImpl implements StudentService {
             return false;
         }
         // do something...
-        studentDAO.insert(user);
+        DAO.insert(user);
         return true;
     }
 
@@ -69,7 +68,7 @@ public class StudentServiceImpl implements StudentService {
             return false;
         }
         // do something...
-        studentDAO.insertCon(id, name, content);
+        DAO.insertCon(id, name, content);
         return true;
     }
 
@@ -78,7 +77,7 @@ public class StudentServiceImpl implements StudentService {
         if (user == null) {
             return false;
         }
-        studentDAO.userAgree(user);
+        DAO.userAgree(user);
         return true;
     }
 
@@ -87,7 +86,7 @@ public class StudentServiceImpl implements StudentService {
         if (user == null) {
             return false;
         }
-        studentDAO.userReject(user);
+        DAO.userReject(user);
         return true;
     }
 
@@ -97,7 +96,7 @@ public class StudentServiceImpl implements StudentService {
             return false;
         }
         // do something...
-        studentDAO.insertPro(proName,proWriter,content);
+        DAO.insertPro(proName,proWriter,content);
         return true;
     }
 
@@ -107,13 +106,13 @@ public class StudentServiceImpl implements StudentService {
             return false;
         }
         // do something...
-        studentDAO.insertRef(referrer);
+        DAO.insertRef(referrer);
         return true;
     }
 
     @Override
     public boolean verify(User user) {
-        User userreturn = studentDAO.verify(user);
+        User userreturn = DAO.verify(user);
         if (userreturn == null) {
             return false;
         }

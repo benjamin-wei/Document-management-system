@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Referrer;
 import com.example.demo.entity.User;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ import java.util.List;
 public class RecommendController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/recommend",method = RequestMethod.GET)
     public String login(HttpServletRequest request, Model model){
@@ -38,8 +38,8 @@ public class RecommendController {
             model.addAttribute("user",new User());
             return "Login";
         }
-        studentService.insertRef(referrer);
-        List<Referrer> list = studentService.getAllReferrer();
+        service.insertRef(referrer);
+        List<Referrer> list = service.getAllReferrer();
         request.setAttribute("referrers",list);
         return "maintain";
     }

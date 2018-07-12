@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ import java.util.List;
 public class DetailsController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/details", method = RequestMethod.GET)
     public String query(@Param("id") @ModelAttribute("id")  int id, HttpServletRequest request, Model model) {
@@ -32,8 +32,8 @@ public class DetailsController {
             return "Login";
         }
         request.setAttribute("user", user);
-            Proposal proposal = studentService.getProposal(id);
-            List<Comment> list = studentService.getComment(id);
+            Proposal proposal = service.getProposal(id);
+            List<Comment> list = service.getComment(id);
             request.setAttribute("comments", list);
             request.setAttribute("proposal", proposal);
             request.getSession().setAttribute("proposalsession",proposal);
@@ -56,8 +56,8 @@ public class DetailsController {
         int id =proposal.getId();
         String content = comment.getContent();
         String name = user.getName();
-        studentService.insertCon(id,name,content);
-        List<Comment> list = studentService.getComment(id);
+        service.insertCon(id,name,content);
+        List<Comment> list = service.getComment(id);
         request.setAttribute("comments", list);
         request.setAttribute("proposal", proposal);
         return "details";

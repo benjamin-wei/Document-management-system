@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +20,10 @@ import java.util.List;
 public class RoleControlController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
-    public static List<User> nobody(StudentService studentService) {
-        List<User> userlist = studentService.getAllUser();
+    public static List<User> nobody(Service service) {
+        List<User> userlist = service.getAllUser();
         List<User> nobody = new ArrayList<>();
         for (User u: userlist) {
             if (u.getIsAdmin() == 0) {
@@ -43,13 +43,13 @@ public class RoleControlController {
         }
         if (user.getIsAdmin() == 1) {
             request.setAttribute("user", user);
-            List<Proposal> list = studentService.getAllProposal();
+            List<Proposal> list = service.getAllProposal();
             request.setAttribute("proposals",list);
             model.addAttribute("message", "您不是管理员，无法使用高级功能");
             return "query";
         }
         request.setAttribute("user", user);
-        request.setAttribute("users",nobody(studentService));
+        request.setAttribute("users",nobody(service));
         return "roleControl";
     }
 

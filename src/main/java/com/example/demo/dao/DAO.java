@@ -11,7 +11,7 @@ import java.util.List;
 * @create 2018-07-01
 **/
 @Mapper
-public interface StudentDAO {
+public interface DAO {
 
     @Select(value = "SELECT * FROM referrer")
     List<Referrer> getAllReferrer();

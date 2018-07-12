@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.*;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +34,7 @@ public class SignupController {
     }
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/signup",method = RequestMethod.GET)
     public String login(Model model){
@@ -53,7 +53,7 @@ public class SignupController {
         } catch (InvalidKeySpecException e) {
             e.printStackTrace();
         }
-        studentService.insert(user);
+        service.insert(user);
         return "Login";
     }
 

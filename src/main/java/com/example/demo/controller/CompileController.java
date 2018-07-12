@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Proposal;
 import com.example.demo.entity.User;
-import com.example.demo.service.StudentService;
+import com.example.demo.service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +21,7 @@ import java.util.List;
 public class CompileController {
 
     @Autowired
-    private StudentService studentService;
+    private Service service;
 
     @RequestMapping(value = "/compile",method = RequestMethod.GET)
     public String login(HttpServletRequest request, Model model){
@@ -32,7 +32,7 @@ public class CompileController {
             return "Login";
         }
         request.setAttribute("user", user);
-        List<Proposal> list = studentService.getProposalByName(user.getName());
+        List<Proposal> list = service.getProposalByName(user.getName());
         request.setAttribute("proposals", list);
         return "compile";
     }
@@ -49,8 +49,8 @@ public class CompileController {
         String proName = proposal.getProName();
         String proWriter = user.getName();
         String content = proposal.getContent();
-        studentService.insertPro(proName,proWriter,content);
-        List<Proposal> proposals = studentService.getProposalByName(user.getName());
+        service.insertPro(proName,proWriter,content);
+        List<Proposal> proposals = service.getProposalByName(user.getName());
         request.setAttribute("proposals", proposals);
         return "compile";
     }

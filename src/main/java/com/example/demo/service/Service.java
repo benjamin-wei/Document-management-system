@@ -10,7 +10,7 @@ import java.util.List;
 * @create 2018-07-01 
 **/
 
-public interface StudentService {
+public interface Service {
 
     List<Referrer> getAllReferrer();
 
