@@ -15,12 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.List;
 
-/**
- * @description
- * @create 2018-07-01
- **/
 @Controller
 public class SignupController {
     //1.获取当前上下文对应的request请求
