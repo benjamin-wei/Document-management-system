@@ -1,6 +1,6 @@
 ## 说明
 
-本工程采用Spring Boot构建项目的基本结构。这是我们的第一个web项目，从毫无经验到完成用了两周，时间匆忙，其中大部分时间花在学习HTML/JavaScript/CSS/Git
+本工程采用Spring Boot构建项目的基本结构。这是我们的第一个web项目，从毫无经验到完成用了一周，时间匆忙，其中大部分时间花在学习HTML/JavaScript/CSS/Git
 /Spring Boot/Thymeleaf/Mybatis/Junit等基础上。
 
 #### 环境准备
